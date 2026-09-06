@@ -2,9 +2,13 @@
 
 ## Ce e proiectul
 
-Un singur fișier `index.html`, self-contained, hostat pe GitHub Pages. Îl citesc 4 membri
-de familie care aleg destinația: Mark, mama, tata, Alex. Nu sunt tehnici. Documentul e în
-română.
+Trei fișiere — `index.html`, `style.css`, `globe.js` — hostate pe GitHub Pages. Îl citesc
+4 membri de familie care aleg destinația: Mark, mama, tata, Alex. Nu sunt tehnici.
+Documentul e în română.
+
+- `index.html` — doar conținutul: destinațiile, tabelele, rutele scrise pe zile;
+- `style.css` — tot aspectul, cu variabilele în `:root`;
+- `globe.js` — rutele (`ROUTES`), motorul de glob și conturul lumii (`LAND`).
 
 Scopul lui: să pui în paralel mai multe destinații și variante de zbor, cu prețuri și cu
 riscurile de conexiune, ca să se poată lua o decizie fără să deschidă nimeni Skyscanner.
@@ -33,23 +37,40 @@ Estetică de flight tracker, cerută explicit: fundal navy închis, glob nocturn
 chihlimbariu. Variabilele sunt în `:root`. Font: IBM Plex Sans + IBM Plex Mono pentru
 ore, coduri de aeroport și prețuri.
 
-Nu adăuga framework-uri. Fișierul trebuie să rămână unul singur, care merge deschis
-direct de pe disc.
+Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă între ele cu căi
+relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 ## Globurile
 
-Se generează cu `make-globe.mjs` (Node + d3-geo + world-atlas + topojson-client).
-Proiecție ortografică centrată automat pe mijlocul rutei, arce de cerc mare între
-waypoint-uri, SVG-ul are stilurile inline ca să fie self-contained.
+Sunt canvas interactive, desenate de `globe.js`: se rotesc trăgând cu mouse-ul sau cu
+degetul, se apropie din butoanele `+` / `−` (rotița merge doar după un click pe glob,
+altfel ar fura derularea paginii; pe telefon merge și pinch), iar pe fiecare bucată de
+traseu e scrisă durata zborului. Proiecție ortografică scrisă de mână, fără librării,
+centrată automat pe mijlocul rutei.
+
+**Pentru o destinație nouă nu e nevoie de Node.** Adaugi ruta în obiectul `ROUTES` din
+`globe.js` și pui în `index.html` un `<div class="globe" data-route="cod-ruta">` cu
+canvas-ul și butoanele (copiază blocul de la Manila). O rută are:
+
+- `points` — aeroporturile în ordinea zborului, cu `lon`, `lat`, `code`;
+- `spans` — etichetele cu durata, fiecare peste bucata de traseu de la `from` la `to`.
+
+Pe etichete stau doar cifre — durata zborului și escala, fără „dus” sau „întors”, fiindcă
+direcția se citește oricum din coloana din dreapta. Duratele se scriu doar dacă apar în
+surse; unde avem doar timpul total al unei legături cu escală, eticheta acoperă tot spanul
+(`{from:1, to:3}`), nu se împarte pe segmente. Eticheta se așază singură pe cea mai lungă
+bucată din span și pe partea mai liberă a liniei, ca să nu cadă peste codurile de
+aeroport.
+
+Coastele sunt codificate compact în variabila `LAND` din `globe.js` (~11 KB, între
+marcajele `LAND-DATA`). Se regenerează doar dacă vrei altă rezoluție:
 
 ```
-npm install d3-geo world-atlas topojson-client
+npm install world-atlas topojson-client
 node make-globe.mjs
 ```
 
-Pentru o destinație nouă: adaugi un `buildGlobe([...])` cu waypoint-urile (lon, lat, cod
-IATA, plus offset-uri de etichetă ca să nu se suprapună), rulezi scriptul, apoi lipești
-SVG-ul rezultat în `index.html`.
+Scriptul rescrie singur blocul din `globe.js`.
 
 ## Structura unei destinații
 
