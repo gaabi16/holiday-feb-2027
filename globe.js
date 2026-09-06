@@ -10,10 +10,17 @@
   var SIN = { code: "SIN", lon: 103.994, lat: 1.359 };
   var KWI = { code: "KWI", lon: 47.979, lat: 29.227 };
   var MNL = { code: "MNL", lon: 121.02, lat: 14.509 };
+  var CLJ = { code: "CLJ", lon: 23.686, lat: 46.785 };
+  var AUH = { code: "AUH", lon: 54.651, lat: 24.433 };
+
+  /* variantă mai ieftină de plecare, nedecisă încă — vezi "de verificat":
+     Wizz Cluj-Napoca → Abu Dhabi, apoi bus/taxi până la Dubai */
+  var ALT_LEG = { points: [CLJ, AUH], busLabel: ["bus", "de verificat"] };
 
   var ROUTES = {
     "mnl-a": {
       points: [OTP, DXB, SIN, MNL],
+      alt: ALT_LEG,
       spans: [
         { from: 0, to: 1, text: ["5h 05m"] },
         { from: 1, to: 3, text: ["13h", "escală SIN 1h 50m"] }
@@ -21,6 +28,7 @@
     },
     "mnl-b": {
       points: [OTP, DXB, KWI, MNL],
+      alt: ALT_LEG,
       spans: [
         { from: 0, to: 1, text: ["5h 05m"] },
         { from: 1, to: 3, text: ["14h 25m", "escală KWI 3h 15m"] }
@@ -135,6 +143,16 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
     var wpXYZ = new Float32Array(pts.length * 3);
     for (i = 0; i < pts.length; i++) toXYZ(pts[i].lon, pts[i].lat, wpXYZ, i * 3);
 
+    /* variantă alternativă, punctată: se leagă de-al doilea punct al rutei
+       principale (hub-ul din Golf), nu e parte din traseul confirmat */
+    var alt = route.alt, altArcs = [], altWpXYZ = null;
+    if (alt) {
+      var altChain = alt.points.concat([pts[1]]);
+      for (i = 0; i < altChain.length - 1; i++) altArcs.push(greatCircle(altChain[i], altChain[i + 1]));
+      altWpXYZ = new Float32Array(alt.points.length * 3);
+      for (i = 0; i < alt.points.length; i++) toXYZ(alt.points[i].lon, alt.points[i].lat, altWpXYZ, i * 3);
+    }
+
     /* eticheta cu durata stă la mijlocul celei mai lungi bucăți din span —
        nu la mijlocul întregului traseu, unde ar cădea peste escală */
     var spans = (route.spans || []).map(function (s) {
@@ -227,7 +245,7 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
       return best;
     }
 
-    function pill(lines, x, y) {
+    function pill(lines, x, y, muted) {
       var fs = Math.max(10, Math.min(12, size * 0.031));
       ctx.font = "600 " + fs + "px 'IBM Plex Mono', ui-monospace, monospace";
       var w = 0, i;
@@ -237,14 +255,16 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
       var bx = Math.max(8, Math.min(size - bw - 8, x - bw / 2));
       var by = Math.max(8, Math.min(size - bh - 8, y - bh / 2));
       ctx.fillStyle = "rgba(7,19,32,.86)";
-      ctx.strokeStyle = "rgba(255,176,32,.45)";
+      ctx.strokeStyle = muted ? "rgba(139,166,189,.5)" : "rgba(255,176,32,.45)";
       ctx.lineWidth = 1;
+      if (muted) ctx.setLineDash([3, 2]);
       ctx.beginPath();
       if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 6);
       else ctx.rect(bx, by, bw, bh);
       ctx.fill();
       ctx.stroke();
-      ctx.fillStyle = "#ffb020";
+      if (muted) ctx.setLineDash([]);
+      ctx.fillStyle = muted ? "#8ba6bd" : "#ffb020";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       for (i = 0; i < lines.length; i++) {
@@ -287,6 +307,28 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
         if (ringPath(LAND_RINGS[i])) { ctx.fill(); ctx.stroke(); }
       }
 
+      /* varianta alternativă, punctată — nu e parte din planul confirmat */
+      if (altArcs.length) {
+        ctx.save();
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.strokeStyle = "rgba(143,168,189,.7)";
+        ctx.lineWidth = 1.6;
+        ctx.setLineDash([6, 4]);
+        ctx.beginPath();
+        for (i = 0; i < altArcs.length - 1; i++) polyline(altArcs[i], false);
+        ctx.stroke();
+        /* ultima bucată e mersul cu autobuzul/taxiul, nu zbor — linie diferită */
+        ctx.strokeStyle = "rgba(99,128,154,.9)";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([1.5, 3.5]);
+        ctx.beginPath();
+        polyline(altArcs[altArcs.length - 1], false);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.restore();
+      }
+
       ctx.save();
       ctx.shadowColor = "rgba(255,176,32,.7)";
       ctx.shadowBlur = 9;
@@ -321,6 +363,15 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
         wpPos.push(vz > 0 ? [vx, vy] : null);
       }
 
+      var altWpPos = [];
+      if (alt) {
+        for (i = 0; i < alt.points.length; i++) {
+          project(altWpXYZ, i * 3);
+          altWpPos.push(vz > 0 ? [vx, vy] : null);
+        }
+      }
+      var avoidPos = wpPos.concat(altWpPos);
+
       /* durata pe fiecare bucată de traseu */
       for (i = 0; i < spans.length; i++) {
         var s = spans[i];
@@ -333,10 +384,21 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
         var tx = bx - ax, ty = by - ay, tl = Math.sqrt(tx * tx + ty * ty) || 1;
         var nx = -ty / tl, ny = tx / tl;
         /* alegem partea liniei mai liberă de coduri de aeroport */
-        if (clearance(mx - nx * 26, my - ny * 26, wpPos) > clearance(mx + nx * 26, my + ny * 26, wpPos)) {
+        if (clearance(mx - nx * 26, my - ny * 26, avoidPos) > clearance(mx + nx * 26, my + ny * 26, avoidPos)) {
           nx = -nx; ny = -ny;
         }
         pill(s.text, mx + nx * 26, my + ny * 26);
+      }
+
+      /* eticheta "bus, de verificat" pe bucata de drum de la sol */
+      if (alt) {
+        var busArc = altArcs[altArcs.length - 1];
+        var bm = Math.floor(busArc.length / 6) * 3;
+        project(busArc, bm);
+        if (vz > 0.06) {
+          var bx2 = vx - cx, by2 = vy - cy, bl = Math.sqrt(bx2 * bx2 + by2 * by2) || 1;
+          pill(alt.busLabel, vx + (bx2 / bl) * 24, vy + (by2 / bl) * 24, true);
+        }
       }
 
       /* aeroporturi, desenate deasupra etichetelor */
@@ -361,6 +423,29 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
         ctx.fillText(pts[i].code, x + (dx / l) * 13, y + (dy / l) * 13);
       }
 
+      /* aeroporturile din varianta alternativă — puncte goale, cod estompat */
+      if (alt) {
+        for (i = 0; i < alt.points.length; i++) {
+          if (!altWpPos[i]) continue;
+          var ax2 = altWpPos[i][0], ay2 = altWpPos[i][1];
+          ctx.fillStyle = "#050e18";
+          ctx.beginPath(); ctx.arc(ax2, ay2, 3.4, 0, Math.PI * 2); ctx.fill();
+          ctx.strokeStyle = "rgba(143,168,189,.9)";
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+
+          var adx = ax2 - cx, ady = ay2 - cy, al = Math.sqrt(adx * adx + ady * ady);
+          if (al < 1) { adx = 1; ady = 0; al = 1; }
+          ctx.font = "600 " + fs + "px 'IBM Plex Mono', ui-monospace, monospace";
+          ctx.textAlign = adx >= 0 ? "left" : "right";
+          ctx.textBaseline = "middle";
+          ctx.lineWidth = 3;
+          ctx.strokeStyle = "rgba(5,14,24,.85)";
+          ctx.strokeText(alt.points[i].code, ax2 + (adx / al) * 12, ay2 + (ady / al) * 12);
+          ctx.fillStyle = "#8ba6bd";
+          ctx.fillText(alt.points[i].code, ax2 + (adx / al) * 12, ay2 + (ady / al) * 12);
+        }
+      }
     }
 
     var pending = false;
