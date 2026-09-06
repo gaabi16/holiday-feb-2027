@@ -98,7 +98,9 @@ h3{font-size:12.5px; font-weight:600; color:var(--ink-faint); margin:0 0 12px; l
 table.cost{width:100%; border-collapse:collapse; font-size:13.5px}
 table.cost th{text-align:left; font-weight:500; color:var(--ink-faint); font-size:12px; padding:0 0 7px; border-bottom:1px solid var(--line)}
 table.cost td{padding:8px 0; border-bottom:1px solid rgba(30,59,82,.5)}
-table.cost td:last-child,table.cost th:last-child{text-align:right; font-family:'IBM Plex Mono',monospace}
+table.cost td:last-child,table.cost th:last-child,
+table.cost td:nth-child(3),table.cost th:nth-child(3){text-align:right; font-family:'IBM Plex Mono',monospace}
+table.cost th:last-child{color:var(--ink-faint)}
 table.cost tr:last-child td{border-bottom:none}
 .totals{display:flex; gap:28px; margin-top:16px; padding-top:16px; border-top:1px solid var(--line)}
 .tot .n{font-family:'IBM Plex Mono',monospace; font-size:23px; color:var(--amber); font-weight:500; line-height:1.2}
