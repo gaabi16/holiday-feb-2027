@@ -25,6 +25,7 @@
   var ASB = { code: "ASB", lon: 58.361, lat: 37.987 };
   var LGW = { code: "LGW", lon: -0.182, lat: 51.154 };
   var LTN = { code: "LTN", lon: -0.368, lat: 51.875 };
+  var LCA = { code: "LCA", lon: 33.625, lat: 34.875 };
 
   var ROUTES = {
     "mnl-a": {
@@ -55,6 +56,17 @@
       spans: [
         { from: 0, to: 1, text: ["2h 20m"] },
         { from: 1, to: 3, text: ["19h 30m", "escală BAH 5h 30m"] }
+      ]
+    },
+    "mnl-e": {
+      /* dus și întors pe Dubai↔Manila, apoi acasă prin Abu Dhabi și Larnaca */
+      points: [OTP, DXB, MNL, DXB, AUH, LCA, OTP],
+      ground: [3],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 2, text: ["9h", "direct"] },
+        { from: 3, to: 4, text: ["transfer", "de verificat"], ground: true },
+        { from: 4, to: 5, text: ["4h 55m"] }
       ]
     },
     "bkk": {
