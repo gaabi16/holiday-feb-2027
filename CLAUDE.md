@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260912`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260913`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -130,12 +130,24 @@ persoană). Diferă doar Dubai↔Manila:
   ele, spre deosebire de C. Prețurile Wizz sunt marcate „Discount Club price” — de
   verificat dacă cer abonament.
 
+- **E — Cebu Pacific**, cea mai ieftină la zboruri: €2.005 pentru 4, €501 de persoană.
+  Wizz OTP→DXB (lei 1.536), Cebu Pacific DXB↔MNL dus-întors (€1.303 pentru 4, singurul zbor
+  direct pe bucata lungă — 9h la dus, 9h 45m la întors), apoi acasă prin Abu Dhabi și
+  Larnaca cu Wizz (AED 896 + €199,96). În schimb cere **trei nopți de cazare** — Dubai la
+  dus, încă una în Golf la întors și una în Larnaca — plus același bus Dubai→Abu Dhabi ca
+  la C. Nicio conexiune strânsă, toate pauzele trec de 10h. De verificat dacă tariful Cebu
+  Pacific include bagaj de cală: filtrele de bagaje erau nebifate la căutare.
+
 Riscul comun la A/B: Wizz e la Terminalul 2 în Dubai, SQ și Kuwait sunt la Terminalul 1,
 iar terminalele nu sunt legate airside. La A conexiunea strânsă e la întors (3h05), la B e
 la dus (2h35) — adică exact unde doare mai tare. La C riscul e altul: bus-ul Dubai→Abu
 Dhabi la întors, cu durată necunoscută, înaintea zborului Wizz — de aceea nu are încă un
 total de persoană afișat ca A și B. La D riscul e tot bilete separate, dar la Roma și cu
-marjă mai mare — 3h 20m la dus, 3h 45m la întors.
+marjă mai mare — 3h 20m la dus, 3h 45m la întors. La E nu e niciun risc de conexiune, dar
+sunt trei nopți de plătit.
+
+Cu cinci variante, tabelul `.compare` nu mai încape pe ecran îngust, așa că stă într-un
+`.tablewrap` care se derulează pe orizontală.
 
 **Kuala Lumpur, 13 – 28 feb 2027.** O singură variantă, fără tab-uri: Aegean OTP↔ATH
 (€587 pentru 4 la BudgetAir, fără bagaj de cală) plus Gulf Air ATH↔KUL prin Bahrain și
