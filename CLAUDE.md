@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260909`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260910`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -67,8 +67,13 @@ direcția se citește oricum din coloana din dreapta. Duratele se scriu doar dac
 surse; unde avem doar timpul total al unei legături cu escală, eticheta acoperă tot spanul
 (`{from:1, to:3}`), nu se împarte pe segmente. Eticheta se așază singură pe cea mai lungă
 bucată din span și pe partea mai liberă a liniei, ca să nu cadă peste codurile de
-aeroport, și fiecare etichetă își caută primul loc liber — fără asta, aeroporturi
-apropiate (Abu Dhabi și Dubai sunt la 116 km) ajung cu etichetele una peste alta.
+aeroport. Fiecare etichetă își caută locul cu cea mai mică suprapunere peste ce e deja
+desenat — fără asta, aeroporturi apropiate (Bruxelles-Zaventem și Charleroi sunt la 46 km,
+Abu Dhabi și Dubai la 116 km) ajung cu etichetele una peste alta.
+
+O rută se poate închide, adică `points` să înceapă și să se termine cu același aeroport —
+așa arată Bangkok, unde dusul și întorsul merg pe drumuri complet diferite. Codul
+aeroportului repetat se scrie o singură dată.
 
 Segmentele `ground` se desenează turcoaz (`#3ddbd9`), linie plină cu aceeași aură ca
 zborurile — se vede că nu e zbor, dar nu e ștearsă. Un span cu `ground:true` primește
@@ -144,6 +149,19 @@ Două lucruri de lămurit înainte de orice decizie pe cifrele astea: Skyscanner
 Gulf Air de dus pe 13 feb, dar site-ul Gulf Air scrie 14-Feb-2027; și prețul de €607 de pe
 aegeanair.com e pentru întoarcerea de dimineață (A3960, 07:45), care nu prinde aterizarea
 Gulf Air de la 13:45.
+
+**Bangkok, 13 – 28 feb 2027.** Ruta se închide, nu e dus-întors pe același drum: dus prin
+Viena și Singapore cu Scoot, întors prin Beijing și Bruxelles cu Hainan. Trei rezervări
+separate — Ryanair OTP→VIE (€37 / pers), Kiwi.com pentru VIE→BKK→BRU (€559 / pers, tarif
+Basic; Guarantee ar fi €625), plus cursa CRL→OTP (€48 / pers). Total €2.576 pentru 4, €644
+de persoană. Cere o noapte de cazare în Viena, neinclusă.
+
+Două capcane, amândouă în document: aterizăm la **Bruxelles-Zaventem (BRU)** și plecăm de
+la **Charleroi (CRL)**, două aeroporturi la vreo 60 km, cu transferul pe cont propriu — de
+aceea cursa de €45 de la 06:40 e imposibilă și am folosit-o pe cea de €48 de la 14:50. Iar
+toate prețurile sunt căutate pentru **un singur pasager**, deci trebuie refăcută căutarea
+pentru 4. Rămâne de lămurit și viza de tranzit pentru China, la escala de 4h 20m din
+Beijing.
 
 ## De făcut
 
