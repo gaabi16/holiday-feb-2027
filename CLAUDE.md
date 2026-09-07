@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260919`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260920`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -238,6 +238,11 @@ Costul ascuns e transferul Dubai→Sharjah de la dus: aterizăm la 20:20 și Air
 la 02:45, deci noaptea se duce pe cei 25 km și pe așteptare, chiar dacă nu plătim hotel. La
 întors transferul e ziua, cu 6h 20m la dispoziție. Întorsul Air Arabia e mai scump decât
 dusul: AED 1.021 față de AED 785 de persoană.
+
+Există și o a doua cursă de întoarcere la același preț — **G91012**, MLE 12:20 → SHJ 15:50,
+în loc de G9094 la 11:15 → 14:45. E notată în traseu, nu ca variantă separată: totul
+altceva e identic, iar diferența e o oră în plus în Maldive contra unui transfer de 5h 15m
+în loc de 6h 20m.
 
 **Zanzibar, 13 – 28 feb 2027.** A doua cea mai ieftină din document: €2.104 pentru 4, €526
 de persoană — după Manila E. Wizz **din Cluj-Napoca** la Abu Dhabi (lei 3.632, aceeași
