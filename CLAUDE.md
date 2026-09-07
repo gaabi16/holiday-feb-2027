@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260920`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260921`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -162,7 +162,7 @@ Gulf Air de dus pe 13 feb, dar site-ul Gulf Air scrie 14-Feb-2027; și prețul d
 aegeanair.com e pentru întoarcerea de dimineață (A3960, 07:45), care nu prinde aterizarea
 Gulf Air de la 13:45.
 
-**Bangkok, 13 feb – 1 mar 2027.** Două variante, pe tab-uri (id-uri `ba` / `bb`):
+**Bangkok, 13 feb – 1 mar 2027.** Trei variante, pe tab-uri (id-uri `ba` / `bb` / `bc`):
 
 - **A — via Viena**, €2.576 pentru 4 (€644 / pers). Rută închisă: dus prin Viena și
   Singapore cu Scoot, întors prin Beijing și Bruxelles cu Hainan. Trei rezervări — Ryanair
@@ -177,8 +177,19 @@ Gulf Air de la 13:45.
   Atenție la bagaj: dusul e Economy SAVER cu **1 × 32 kg inclus**, dar întorsul e „Economy
   Class Zero Bag" — **fără niciun bagaj de cală**. Plecarea din Bangkok e la 03:00.
 
-A mai existat o variantă cu Air Arabia din Sharjah (€2.669), scoasă la cererea lui Mark
-fiindcă datele din căutare nu se potriveau.
+- **C — Air Arabia**, €2.669 pentru 4 (€667 / pers), cea mai scumpă dar cu **cel mai lung
+  sejur din tot documentul: 14 nopți**. Wizz OTP↔DXB dus-întors (lei 4.832) plus Air Arabia
+  SHJ↔BKK **direct**, fără escală (AED 7.450 pentru 4). Zero nopți de cazare. Punctul slab
+  e transferul nocturn Dubai→Sharjah, cu 4h 50m pentru 25 km plus check-in.
+
+  O primă versiune a acestei variante avea datele greșite (Air Arabia apărea cu plecare pe
+  13, deși Wizz aterizează abia la 20:20 în acea zi); Mark a retrimis căutarea corectă, cu
+  plecare pe 14.
+
+  **Alternativă de întoarcere, cerută de Mark:** dacă ne întoarcem pe 27 și venim cu Wizz
+  prin Larnaca (AUH→LCA, apoi LCA→OTP), bucata Wizz de întors costă €102 / pers în loc de
+  €156 — adică **−€217 în total**. Cere însă zborul Air Arabia mutat pe 27 (preț
+  nedeterminat încă), un transfer Sharjah→Abu Dhabi de ~150 km și o noapte în Larnaca.
 
 **Ho Chi Minh, 13 – 28 feb 2027.** Trei variante, pe tab-uri ca la Manila:
 
