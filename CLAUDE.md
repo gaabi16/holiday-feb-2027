@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260913`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260914`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -186,6 +186,18 @@ Aceeași capcană ca la Bangkok, în altă parte: aterizăm la **Gatwick** și p
 09:30 e imposibilă și am folosit-o pe cea de la 18:55, la același preț. Escala din Așgabat
 e de doar 1h 20m, dar e în aceeași rezervare Kiwi. De verificat viza de tranzit pentru
 Turkmenistan și prețurile pentru 4 pasageri, nu 1.
+
+**Phuket, 13 – 28 feb 2027.** Cea mai încâlcită la sol: **două transferuri între
+aeroporturi, amândouă în Golf**. La dus Wizz aterizează la Dubai (lei 1.536 pentru 4), dar
+Air Arabia pleacă din **Sharjah**, la ~25 km — de aici și o noapte de cazare în Golf. La
+întors Oman Air aduce înapoi la Dubai, iar Wizz pleacă din **Abu Dhabi**, la ~130 km, în
+doar 5h 05m. Kiwi pentru SHJ→HKT și HKT→MCT→DXB costă €513 / pers (Basic), plus Wizz
+AUH→LCA (AED 896) și LCA→OTP (€199,96), cu încă o noapte în Larnaca. Total €2.754 pentru
+4, €688 de persoană.
+
+Aici taxa Kiwi Guarantee e **€254 de persoană**, de patru ori mai mare decât la Bangkok și
+Ho Chi Minh, unde era €66 — e pus la „de verificat", fiindcă schimbă mult calculul dacă
+vrem protecție.
 
 ## De făcut
 
