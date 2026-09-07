@@ -61,6 +61,24 @@
         { from: 1, to: 3, text: ["19h 30m", "escală BAH 5h 30m"] }
       ]
     },
+    "sgn-b": {
+      points: [OTP, DXB, SIN, SGN],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 3, text: ["16h 15m", "escală SIN 6h 40m"] }
+      ]
+    },
+    "sgn-c": {
+      /* dus-întors pe același drum până la Dubai, apoi acasă prin Abu Dhabi și Larnaca */
+      points: [OTP, DXB, SIN, SGN, SIN, DXB, AUH, LCA, OTP],
+      ground: [5],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 3, text: ["16h 15m", "escală SIN 6h 40m"] },
+        { from: 5, to: 6, text: ["transfer", "130 km"], ground: true },
+        { from: 6, to: 7, text: ["4h 55m"] }
+      ]
+    },
     "mnl-e": {
       /* dus și întors pe Dubai↔Manila, apoi acasă prin Abu Dhabi și Larnaca */
       points: [OTP, DXB, MNL, DXB, AUH, LCA, OTP],
@@ -84,7 +102,7 @@
         { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
       ]
     },
-    "sgn": {
+    "sgn-a": {
       /* tot o rută închisă: dus prin Viena și Singapore, întors prin Așgabat și
          Londra, cu transfer pe uscat de la Gatwick la Luton */
       points: [OTP, VIE, SIN, SGN, ASB, LGW, LTN, OTP],
