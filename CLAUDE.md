@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260908`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260909`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -117,12 +117,20 @@ persoană). Diferă doar Dubai↔Manila:
   aceleași două nopți de cazare. Zborul de întors (AUH→CLJ) a fost găsit pentru 27 feb,
   dar planul cere revenire pe 28 feb — de recăutat cu data corectă înainte să se ia o
   decizie pe cifrele astea.
+- **D — via Roma**, singura fără Dubai: Wizz OTP↔FCO (lei 324 dus / lei 194 întors de
+  persoană, €395 pentru 4) plus Gulf Air FCO↔MNL prin Bahrain (€2.323 pentru 4 la
+  Gotogate, cu bagaj de cală). Total €2.718, €680 de persoană — cea mai scumpă. Zero nopți
+  de hotel, dar și cele mai puține zile: 15–27 feb în loc de 13 feb – 1 mar, adică vreo 10
+  zile în Filipine față de 12 la A și 13 la B. Datele Wizz și Gulf Air se potrivesc între
+  ele, spre deosebire de C. Prețurile Wizz sunt marcate „Discount Club price” — de
+  verificat dacă cer abonament.
 
 Riscul comun la A/B: Wizz e la Terminalul 2 în Dubai, SQ și Kuwait sunt la Terminalul 1,
 iar terminalele nu sunt legate airside. La A conexiunea strânsă e la întors (3h05), la B e
 la dus (2h35) — adică exact unde doare mai tare. La C riscul e altul: bus-ul Dubai→Abu
 Dhabi la întors, cu durată necunoscută, înaintea zborului Wizz — de aceea nu are încă un
-total de persoană afișat ca A și B.
+total de persoană afișat ca A și B. La D riscul e tot bilete separate, dar la Roma și cu
+marjă mai mare — 3h 20m la dus, 3h 45m la întors.
 
 **Kuala Lumpur, 13 – 28 feb 2027.** O singură variantă, fără tab-uri: Aegean OTP↔ATH
 (€587 pentru 4 la BudgetAir, fără bagaj de cală) plus Gulf Air ATH↔KUL prin Bahrain și
