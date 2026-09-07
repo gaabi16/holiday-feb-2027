@@ -21,6 +21,10 @@
   var PEK = { code: "PEK", lon: 116.603, lat: 40.080 };
   var BRU = { code: "BRU", lon: 4.484, lat: 50.901 };
   var CRL = { code: "CRL", lon: 4.454, lat: 50.459 };
+  var SGN = { code: "SGN", lon: 106.652, lat: 10.819 };
+  var ASB = { code: "ASB", lon: 58.361, lat: 37.987 };
+  var LGW = { code: "LGW", lon: -0.182, lat: 51.154 };
+  var LTN = { code: "LTN", lon: -0.368, lat: 51.875 };
 
   var ROUTES = {
     "mnl-a": {
@@ -62,6 +66,18 @@
         { from: 0, to: 1, text: ["1h 40m"] },
         { from: 1, to: 3, text: ["16h 15m", "escală SIN 2h"] },
         { from: 3, to: 5, text: ["19h 25m", "escală PEK 4h 20m"] },
+        { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
+      ]
+    },
+    "sgn": {
+      /* tot o rută închisă: dus prin Viena și Singapore, întors prin Așgabat și
+         Londra, cu transfer pe uscat de la Gatwick la Luton */
+      points: [OTP, VIE, SIN, SGN, ASB, LGW, LTN, OTP],
+      ground: [5],
+      spans: [
+        { from: 0, to: 1, text: ["1h 40m"] },
+        { from: 1, to: 3, text: ["16h 05m", "escală SIN 2h 10m"] },
+        { from: 3, to: 5, text: ["16h 30m", "escală ASB 1h 20m"] },
         { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
       ]
     },
