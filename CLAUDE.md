@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260907`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260908`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -123,6 +123,19 @@ iar terminalele nu sunt legate airside. La A conexiunea strânsă e la întors (
 la dus (2h35) — adică exact unde doare mai tare. La C riscul e altul: bus-ul Dubai→Abu
 Dhabi la întors, cu durată necunoscută, înaintea zborului Wizz — de aceea nu are încă un
 total de persoană afișat ca A și B.
+
+**Kuala Lumpur, 13 – 28 feb 2027.** O singură variantă, fără tab-uri: Aegean OTP↔ATH
+(€587 pentru 4 la BudgetAir, fără bagaj de cală) plus Gulf Air ATH↔KUL prin Bahrain și
+Singapore (€2.136 pentru 4 la Gotogate, cu bagaj inclus; oficial ar fi €2.236). Total
+€2.723, adică €680 de persoană — mai scump decât oricare variantă de Manila. Cele trei
+zboruri Gulf Air sunt pe același bilet, deci escalele din Bahrain și Singapore sunt
+protejate; riscul e la Atena, unde biletul Aegean e separat și avem 2h 50m la dus. La
+întors prindem 10h 30m peste noapte în aeroportul din Bahrain.
+
+Două lucruri de lămurit înainte de orice decizie pe cifrele astea: Skyscanner dă zborul
+Gulf Air de dus pe 13 feb, dar site-ul Gulf Air scrie 14-Feb-2027; și prețul de €607 de pe
+aegeanair.com e pentru întoarcerea de dimineață (A3960, 07:45), care nu prinde aterizarea
+Gulf Air de la 13:45.
 
 ## De făcut
 
