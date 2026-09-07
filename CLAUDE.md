@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260918`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260919`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -238,6 +238,18 @@ Costul ascuns e transferul Dubai→Sharjah de la dus: aterizăm la 20:20 și Air
 la 02:45, deci noaptea se duce pe cei 25 km și pe așteptare, chiar dacă nu plătim hotel. La
 întors transferul e ziua, cu 6h 20m la dispoziție. Întorsul Air Arabia e mai scump decât
 dusul: AED 1.021 față de AED 785 de persoană.
+
+**Zanzibar, 13 – 28 feb 2027.** A doua cea mai ieftină din document: €2.104 pentru 4, €526
+de persoană — după Manila E. Wizz **din Cluj-Napoca** la Abu Dhabi (lei 3.632, aceeași
+rezervare ca la Manila C) plus Ethiopian Airlines AUH↔ZNZ prin Addis Abeba, luat prin
+lastminute.com la €353 / pers, cu bagaj de cală inclus (oficial ar fi AED 6.600, adică €387
+/ pers). Doar două rezervări. Drumul e scurt pentru distanță: 7h 30m la dus.
+
+Are însă cele două extreme ale documentului: **escala de 35 de minute din Addis Abeba**,
+cea mai strânsă de oriunde (protejată de rezervarea Ethiopian, dar la limită pentru o
+conexiune internațională), și **18 ore de așteptare în Abu Dhabi la întors** — aterizăm la
+03:10 și Wizz pleacă la 21:15. Plus încă o noapte în Abu Dhabi la dus și drumul până în
+Cluj. De verificat viza pentru Tanzania.
 
 ## De făcut
 
