@@ -120,6 +120,15 @@
         { from: 1, to: 3, text: ["7h 30m", "escală ADD 35m"] }
       ]
     },
+    "bkk-c": {
+      points: [OTP, DXB, SHJ, BKK],
+      ground: [1],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 2, text: ["transfer", "25 km"], ground: true },
+        { from: 2, to: 3, text: ["6h 15m", "direct"] }
+      ]
+    },
     "mle": {
       points: [OTP, DXB, SHJ, MLE],
       ground: [1],
