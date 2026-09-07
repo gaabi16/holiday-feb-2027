@@ -12,6 +12,9 @@
   var MNL = { code: "MNL", lon: 121.02, lat: 14.509 };
   var CLJ = { code: "CLJ", lon: 23.686, lat: 46.785 };
   var AUH = { code: "AUH", lon: 54.651, lat: 24.433 };
+  var ATH = { code: "ATH", lon: 23.945, lat: 37.936 };
+  var BAH = { code: "BAH", lon: 50.634, lat: 26.271 };
+  var KUL = { code: "KUL", lon: 101.710, lat: 2.746 };
 
   var ROUTES = {
     "mnl-a": {
@@ -35,6 +38,13 @@
         { from: 0, to: 1, text: ["5h 10m"] },
         { from: 1, to: 2, text: ["bus", "de verificat"], ground: true },
         { from: 2, to: 4, text: ["13h", "escală SIN 1h 50m"] }
+      ]
+    },
+    "kul": {
+      points: [OTP, ATH, BAH, SIN, KUL],
+      spans: [
+        { from: 0, to: 1, text: ["1h 35m"] },
+        { from: 1, to: 4, text: ["18h 50m", "escale BAH și SIN"] }
       ]
     }
   };
