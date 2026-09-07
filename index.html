@@ -21,14 +21,14 @@
 <details class="dest" open>
   <summary>
     <div class="dname"><span class="num">01</span>Manila, Filipine</div>
-    <div class="dmeta">13 februarie – 1 martie · două variante de zbor din Dubai</div>
+    <div class="dmeta">13 februarie – 1 martie · trei variante de zbor, C via Cluj-Napoca</div>
     <div class="dprice">€585–631 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
     <div class="dsub">€2.387–2.509 total · doar zboruri</div>
   </summary>
 
   <div class="body">
 
-    <p class="intro">București ↔ Dubai e la fel în ambele variante, cu Wizz Air. Diferă doar bucata Dubai ↔ Manila.</p>
+    <p class="intro">București ↔ Dubai e la fel în variantele A și B, cu Wizz Air — diferă doar bucata Dubai ↔ Manila. Varianta C schimbă chiar prima bucată: Cluj-Napoca ↔ Abu Dhabi, cu bus până în Dubai — vezi tab-ul C mai jos.</p>
     <table class="compare">
       <tr>
         <th></th>
@@ -48,9 +48,11 @@
     <div class="tabs">
       <input type="radio" name="mnl" id="va" checked>
       <input type="radio" name="mnl" id="vb">
+      <input type="radio" name="mnl" id="vc">
       <div class="tabbar">
         <label for="va"><b>Varianta A · Singapore Airlines</b>€2.387 · două nopți de hotel pe drum</label>
         <label for="vb"><b>Varianta B · Kuwait Airways</b>€2.509 · fără nopți de hotel</label>
+        <label for="vc"><b>Varianta C · via Cluj-Napoca</b>de la €2.174 · mașină + bus, de verificat</label>
       </div>
 
       <div class="pane pane-a">
@@ -173,7 +175,6 @@
               <li>Ora de plecare din Manila: 12:45, 14:00 sau 17:05</li>
               <li>Dacă lăsăm conexiunea de 3h din Dubai sau punem o noapte tampon</li>
               <li>Cost bagaj de cală Wizz, dus și întors</li>
-              <li>Zbor Wizz din Cluj-Napoca (CLJ &rarr; AUH) e €692 pentru 4, cu &euro;213 mai ieftin decât OTP &rarr; DXB &mdash; dar cere drum cu mașina până în Cluj și un bus/taxi Abu Dhabi &rarr; Dubai ca să prindem zborul din DXB; nu știm încă niciunul din cele două costuri</li>
             </ul>
           </div>
         </div>
@@ -278,7 +279,121 @@
               <li>Dacă putem face check-in online la Kuwait, ca să sărim peste ghișeu</li>
               <li>Cât costă un zbor Wizz mai devreme pe 13 februarie, ca să avem marjă</li>
               <li>Cost bagaj de cală Wizz, dus și întors</li>
-              <li>Zbor Wizz din Cluj-Napoca (CLJ &rarr; AUH) e €692 pentru 4, cu &euro;213 mai ieftin decât OTP &rarr; DXB &mdash; dar cere drum cu mașina până în Cluj și un bus/taxi Abu Dhabi &rarr; Dubai ca să prindem zborul din DXB; nu știm încă niciunul din cele două costuri</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pane pane-c">
+        <div class="split">
+          <div class="globe" data-route="mnl-c">
+            <canvas tabindex="0" role="img" aria-label="Glob cu traseul Cluj-Napoca – Abu Dhabi – Dubai – Singapore – Manila. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+            <div class="gctl">
+              <button type="button" data-act="in" aria-label="Apropie">+</button>
+              <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+              <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+              <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+            </div>
+          </div>
+          <div class="route">
+            <h3>Dus</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">CLJ 13:30 <em>&rarr;</em> AUH 20:40</div>
+                <div class="det">sâmbătă 13 feb · Wizz Air W4 3487 · <span>5h 10m</span></div>
+              </div>
+            </div>
+            <div class="gap ground">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt">Bus/taxi Abu Dhabi &rarr; Dubai &mdash; &asymp;130 km, cost și durată de verificat</div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Dubai</strong><span>13 &rarr; 14 feb · aproape 24h până la zborul următor</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">DXB 19:50 <em>&rarr;</em> MNL 12:50<sup>+1</sup></div>
+                <div class="det">duminică 14 feb · SQ 495 + SQ 910 · <span>13h · escală Singapore 1h 50m · plecare Terminal 1</span></div>
+              </div>
+            </div>
+
+            <h3>Întors</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">MNL 17:05 <em>&rarr;</em> SIN</div>
+                <div class="det">sâmbătă 27 feb · SQ 919</div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Singapore</strong><span>27 &rarr; 28 feb · escală de 17h 40m</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">SIN <em>&rarr;</em> DXB 18:00</div>
+                <div class="det">duminică 28 feb · SQ 494 · <span>sosire Terminal 1</span></div>
+              </div>
+            </div>
+            <div class="gap ground risk">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>Bus/taxi Dubai &rarr; Abu Dhabi, apoi zborul Wizz</strong><span>Timp de conexiune necunoscut &mdash; se adaugă peste transferul T1 din Dubai</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">AUH 21:15 <em>&rarr;</em> CLJ 01:10<sup>+1</sup></div>
+                <div class="det">preț găsit pentru sâmbătă 27 feb &mdash; <span>de recăutat pentru duminică 28 feb, data corectă de întoarcere</span> · Wizz Air W4 3488 · 5h 55m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>Cost zboruri</h3>
+            <table class="cost">
+              <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+              <tr><td>CLJ &rarr; AUH · Wizz</td><td>RON</td><td>194</td><td>48</td></tr>
+              <tr><td>AUH &rarr; CLJ · Wizz</td><td>RON</td><td>498</td><td>124</td></tr>
+              <tr><td>DXB &harr; MNL · Singapore Airlines</td><td>EUR</td><td>1.482</td><td>370</td></tr>
+            </table>
+            <div class="totals">
+              <div class="tot"><div class="n">€2.174</div><div class="l">zboruri cunoscute, 4 persoane</div></div>
+              <div class="tot"><div class="n">€543</div><div class="l">de persoană, doar zboruri</div></div>
+            </div>
+          </div>
+          <div>
+            <h3>De ce ar merita</h3>
+            <div class="save">
+              <b>Zborul e cu €213 mai ieftin decât la A/B</b>
+              Wizz Cluj-Napoca &harr; Abu Dhabi costă €692 pentru 4, față de €905 pe ruta București &harr; Dubai. <span class="amt">−€213</span> · rămâne de văzut dacă acoperă mașina până în Cluj și bus-ul din Golf.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>De știut</h3>
+            <ul>
+              <li><strong>E cea mai ieftină variantă de zbor</strong>, dar prețul nu e complet — lipsesc mașina până în Cluj și bus-ul Abu Dhabi &harr; Dubai.</li>
+              <li>Bucata Dubai &harr; Manila e identică cu varianta A: același zbor Singapore Airlines, aceleași două nopți de cazare pe drum.</li>
+              <li>Cluj-Napoca e la &asymp;450 km de București, cca. 5h cu mașina.</li>
+              <li>Abu Dhabi și Dubai sunt la &asymp;130 km distanță, cam 1h 30m &ndash; 2h cu mașina.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>De verificat</h3>
+            <ul class="chk">
+              <li>Cost mașină București &harr; Cluj-Napoca, dus-întors, sau alt mijloc de transport</li>
+              <li>Unde lăsăm mașina cât timp suntem plecați, dacă mergem cu ea</li>
+              <li>Cost și durată bus/taxi Abu Dhabi &harr; Dubai, ambele sensuri</li>
+              <li>Zborul Wizz de întors e găsit pentru 27 feb &mdash; de recăutat pentru 28 feb, data corectă</li>
+              <li>Dacă timpul dintre aterizarea din Singapore (18:00) și zborul Wizz din Abu Dhabi ajunge, cu tot cu bus</li>
+              <li>Cost bagaj de cală Wizz, dus și întors &mdash; Wizz Basic nu include bagaj de cală</li>
             </ul>
           </div>
         </div>
