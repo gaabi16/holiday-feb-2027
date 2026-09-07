@@ -38,8 +38,8 @@ h3{font-size:12.5px; font-weight:600; color:var(--ink-faint); margin:0 0 12px; l
 .compare th{text-align:left; padding:0 0 9px; border-bottom:1px solid var(--line); font-size:13px; font-weight:600; color:var(--ink)}
 .compare th:first-child{color:var(--ink-faint); font-weight:500; font-size:12px}
 .compare td{padding:9px 0; border-bottom:1px solid rgba(30,59,82,.5); color:var(--ink-dim)}
-.compare td:first-child{color:var(--ink-faint); width:22%}
-.compare th:not(:first-child),.compare td:not(:first-child){padding-left:22px}
+.compare td:first-child{color:var(--ink-faint); width:18%}
+.compare th:not(:first-child),.compare td:not(:first-child){padding-left:16px}
 .compare tr:last-child td{border-bottom:none}
 .compare .k{color:var(--ink); font-family:'IBM Plex Mono',monospace}
 .compare .good{color:var(--ok)}
@@ -52,10 +52,10 @@ h3{font-size:12.5px; font-weight:600; color:var(--ink-faint); margin:0 0 12px; l
 .tabbar label b{display:block; color:var(--ink); font-weight:600; font-size:14px}
 .tabbar label:hover{background:var(--panel-2)}
 .pane{display:none}
-#va:checked~.tabbar label[for=va],#vb:checked~.tabbar label[for=vb],#vc:checked~.tabbar label[for=vc]{
+#va:checked~.tabbar label[for=va],#vb:checked~.tabbar label[for=vb],#vc:checked~.tabbar label[for=vc],#vd:checked~.tabbar label[for=vd]{
   border-color:var(--amber); background:var(--amber-soft); color:var(--ink)}
-#va:focus-visible~.tabbar label[for=va],#vb:focus-visible~.tabbar label[for=vb],#vc:focus-visible~.tabbar label[for=vc]{outline:2px solid var(--amber); outline-offset:2px}
-#va:checked~.pane-a,#vb:checked~.pane-b,#vc:checked~.pane-c{display:block}
+#va:focus-visible~.tabbar label[for=va],#vb:focus-visible~.tabbar label[for=vb],#vc:focus-visible~.tabbar label[for=vc],#vd:focus-visible~.tabbar label[for=vd]{outline:2px solid var(--amber); outline-offset:2px}
+#va:checked~.pane-a,#vb:checked~.pane-b,#vc:checked~.pane-c,#vd:checked~.pane-d{display:block}
 
 .split{display:grid; grid-template-columns:minmax(280px,370px) 1fr; gap:30px; align-items:start}
 .globe{position:relative; user-select:none; -webkit-user-select:none}
