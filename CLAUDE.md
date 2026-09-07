@@ -40,6 +40,11 @@ ore, coduri de aeroport și prețuri.
 Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă între ele cu căi
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
+**Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
+ambele linkuri, formatul e data: `?v=20260907`). Fără asta, browserul servește versiunea
+veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
+fiindcă CSS-ul din cache nu avea regula lui.
+
 ## Globurile
 
 Sunt canvas interactive, desenate de `globe.js`: se rotesc trăgând cu mouse-ul sau cu
@@ -55,15 +60,19 @@ canvas-ul și butoanele (copiază blocul de la Manila). O rută are:
 - `points` — aeroporturile în ordinea zborului, cu `lon`, `lat`, `code`;
 - `spans` — etichetele cu durata, fiecare peste bucata de traseu de la `from` la `to`;
 - `ground` — opțional, indecșii arcelor care sunt transport terestru (bus/taxi), nu
-  zbor — se desenează punctat și estompat în loc de amber plin.
+  zbor — se desenează turcoaz în loc de amber.
 
 Pe etichete stau doar cifre — durata zborului și escala, fără „dus” sau „întors”, fiindcă
 direcția se citește oricum din coloana din dreapta. Duratele se scriu doar dacă apar în
 surse; unde avem doar timpul total al unei legături cu escală, eticheta acoperă tot spanul
 (`{from:1, to:3}`), nu se împarte pe segmente. Eticheta se așază singură pe cea mai lungă
 bucată din span și pe partea mai liberă a liniei, ca să nu cadă peste codurile de
-aeroport. Un span cu `muted:true` se desenează cu același stil estompat ca segmentele
-`ground` — pentru etichete gen „bus, de verificat”, nu durate confirmate.
+aeroport, și fiecare etichetă își caută primul loc liber — fără asta, aeroporturi
+apropiate (Abu Dhabi și Dubai sunt la 116 km) ajung cu etichetele una peste alta.
+
+Segmentele `ground` se desenează turcoaz (`#3ddbd9`), linie plină cu aceeași aură ca
+zborurile — se vede că nu e zbor, dar nu e ștearsă. Un span cu `ground:true` primește
+aceeași culoare pe etichetă.
 
 Coastele sunt codificate compact în variabila `LAND` din `globe.js` (~11 KB, între
 marcajele `LAND-DATA`). Se regenerează doar dacă vrei altă rezoluție:
