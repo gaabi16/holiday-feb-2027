@@ -15,6 +15,7 @@
   var ATH = { code: "ATH", lon: 23.945, lat: 37.936 };
   var BAH = { code: "BAH", lon: 50.634, lat: 26.271 };
   var KUL = { code: "KUL", lon: 101.710, lat: 2.746 };
+  var FCO = { code: "FCO", lon: 12.239, lat: 41.800 };
 
   var ROUTES = {
     "mnl-a": {
@@ -38,6 +39,13 @@
         { from: 0, to: 1, text: ["5h 10m"] },
         { from: 1, to: 2, text: ["bus", "de verificat"], ground: true },
         { from: 2, to: 4, text: ["13h", "escală SIN 1h 50m"] }
+      ]
+    },
+    "mnl-d": {
+      points: [OTP, FCO, BAH, MNL],
+      spans: [
+        { from: 0, to: 1, text: ["2h 20m"] },
+        { from: 1, to: 3, text: ["19h 30m", "escală BAH 5h 30m"] }
       ]
     },
     "kul": {
