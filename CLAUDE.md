@@ -53,14 +53,17 @@ centrată automat pe mijlocul rutei.
 canvas-ul și butoanele (copiază blocul de la Manila). O rută are:
 
 - `points` — aeroporturile în ordinea zborului, cu `lon`, `lat`, `code`;
-- `spans` — etichetele cu durata, fiecare peste bucata de traseu de la `from` la `to`.
+- `spans` — etichetele cu durata, fiecare peste bucata de traseu de la `from` la `to`;
+- `ground` — opțional, indecșii arcelor care sunt transport terestru (bus/taxi), nu
+  zbor — se desenează punctat și estompat în loc de amber plin.
 
 Pe etichete stau doar cifre — durata zborului și escala, fără „dus” sau „întors”, fiindcă
 direcția se citește oricum din coloana din dreapta. Duratele se scriu doar dacă apar în
 surse; unde avem doar timpul total al unei legături cu escală, eticheta acoperă tot spanul
 (`{from:1, to:3}`), nu se împarte pe segmente. Eticheta se așază singură pe cea mai lungă
 bucată din span și pe partea mai liberă a liniei, ca să nu cadă peste codurile de
-aeroport.
+aeroport. Un span cu `muted:true` se desenează cu același stil estompat ca segmentele
+`ground` — pentru etichete gen „bus, de verificat”, nu durate confirmate.
 
 Coastele sunt codificate compact în variabila `LAND` din `globe.js` (~11 KB, între
 marcajele `LAND-DATA`). Se regenerează doar dacă vrei altă rezoluție:
@@ -98,10 +101,19 @@ persoană). Diferă doar Dubai↔Manila:
   6.880). Total €2.387. Cere două nopți de hotel, în Dubai și în Singapore.
 - **B — Kuwait Airways**, AED 6.832 pentru 4 = €1.604. Total €2.509. Zero nopți de hotel,
   aproape o zi în plus în Filipine.
+- **C — via Cluj-Napoca**, în evaluare, nu un total finalizat ca A/B. Înlocuiește doar
+  prima bucată: Wizz Cluj-Napoca↔Abu Dhabi (€692 pentru 4, găsit pe wizzair.com) în loc de
+  București↔Dubai (€905), plus un bus/taxi Abu Dhabi↔Dubai (~130 km, cost și durată încă
+  necunoscute). De la Dubai încolo e identic cu A — același zbor Singapore Airlines,
+  aceleași două nopți de cazare. Zborul de întors (AUH→CLJ) a fost găsit pentru 27 feb,
+  dar planul cere revenire pe 28 feb — de recăutat cu data corectă înainte să se ia o
+  decizie pe cifrele astea.
 
-Riscul comun: Wizz e la Terminalul 2 în Dubai, SQ și Kuwait sunt la Terminalul 1, iar
-terminalele nu sunt legate airside. La A conexiunea strânsă e la întors (3h05), la B e la
-dus (2h35) — adică exact unde doare mai tare.
+Riscul comun la A/B: Wizz e la Terminalul 2 în Dubai, SQ și Kuwait sunt la Terminalul 1,
+iar terminalele nu sunt legate airside. La A conexiunea strânsă e la întors (3h05), la B e
+la dus (2h35) — adică exact unde doare mai tare. La C riscul e altul: bus-ul Dubai→Abu
+Dhabi la întors, cu durată necunoscută, înaintea zborului Wizz — de aceea nu are încă un
+total de persoană afișat ca A și B.
 
 ## De făcut
 
