@@ -29,6 +29,8 @@
   var SHJ = { code: "SHJ", lon: 55.517, lat: 25.329 };
   var HKT = { code: "HKT", lon: 98.317, lat: 8.113 };
   var MCT = { code: "MCT", lon: 58.284, lat: 23.593 };
+  var DAD = { code: "DAD", lon: 108.199, lat: 16.044 };
+  var MLE = { code: "MLE", lon: 73.529, lat: 4.192 };
 
   var ROUTES = {
     "mnl-a": {
@@ -90,7 +92,7 @@
         { from: 4, to: 5, text: ["4h 55m"] }
       ]
     },
-    "bkk": {
+    "bkk-a": {
       /* ruta se închide: dus prin Viena și Singapore, întors prin Beijing și
          Bruxelles, apoi transfer pe uscat până la Charleroi */
       points: [OTP, VIE, SIN, BKK, PEK, BRU, CRL, OTP],
@@ -100,6 +102,22 @@
         { from: 1, to: 3, text: ["16h 15m", "escală SIN 2h"] },
         { from: 3, to: 5, text: ["19h 25m", "escală PEK 4h 20m"] },
         { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
+      ]
+    },
+    "bkk-b": {
+      points: [OTP, DXB, KWI, BKK],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 3, text: ["12h 10m", "escală KWI 3h 40m"] }
+      ]
+    },
+    "mle": {
+      points: [OTP, DXB, SHJ, MLE],
+      ground: [1],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 2, text: ["transfer", "25 km"], ground: true },
+        { from: 2, to: 3, text: ["4h 25m", "direct"] }
       ]
     },
     "sgn-a": {
@@ -112,6 +130,17 @@
         { from: 1, to: 3, text: ["16h 05m", "escală SIN 2h 10m"] },
         { from: 3, to: 5, text: ["16h 30m", "escală ASB 1h 20m"] },
         { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
+      ]
+    },
+    "dad": {
+      /* dus-întors pe același drum până la Dubai, apoi acasă prin Abu Dhabi și Larnaca */
+      points: [OTP, DXB, SIN, DAD, SIN, DXB, AUH, LCA, OTP],
+      ground: [5],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 3, text: ["17h 45m", "escală SIN 7h 45m"] },
+        { from: 5, to: 6, text: ["transfer", "130 km"], ground: true },
+        { from: 6, to: 7, text: ["4h 55m"] }
       ]
     },
     "hkt": {
