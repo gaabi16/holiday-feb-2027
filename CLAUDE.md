@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260910`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260912`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -162,6 +162,18 @@ aceea cursa de €45 de la 06:40 e imposibilă și am folosit-o pe cea de €48 
 toate prețurile sunt căutate pentru **un singur pasager**, deci trebuie refăcută căutarea
 pentru 4. Rămâne de lămurit și viza de tranzit pentru China, la escala de 4h 20m din
 Beijing.
+
+**Ho Chi Minh, 13 – 28 feb 2027.** A doua rută închisă: dus prin Viena și Singapore cu
+Scoot, întors prin Așgabat și Londra cu Turkmenistan Airlines. Trei rezervări — Ryanair
+OTP→VIE sâmbătă 13 feb (€37 / pers), Kiwi.com pentru VIE→SGN→LGW (€556 / pers, Basic;
+Guarantee €622), plus Wizz LTN→OTP (€54 / pers). Total €2.588 pentru 4, €647 de persoană.
+Noapte de cazare în Viena, 13 → 14 feb, neinclusă.
+
+Aceeași capcană ca la Bangkok, în altă parte: aterizăm la **Gatwick** și plecăm de la
+**Luton**, vreo 90 km prin Londra, cu 5h 15m la dispoziție — de aceea cursa Wizz de la
+09:30 e imposibilă și am folosit-o pe cea de la 18:55, la același preț. Escala din Așgabat
+e de doar 1h 20m, dar e în aceeași rezervare Kiwi. De verificat viza de tranzit pentru
+Turkmenistan și prețurile pentru 4 pasageri, nu 1.
 
 ## De făcut
 
