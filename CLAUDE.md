@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260915`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260918`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -162,18 +162,23 @@ Gulf Air de dus pe 13 feb, dar site-ul Gulf Air scrie 14-Feb-2027; și prețul d
 aegeanair.com e pentru întoarcerea de dimineață (A3960, 07:45), care nu prinde aterizarea
 Gulf Air de la 13:45.
 
-**Bangkok, 13 – 28 feb 2027.** Ruta se închide, nu e dus-întors pe același drum: dus prin
-Viena și Singapore cu Scoot, întors prin Beijing și Bruxelles cu Hainan. Trei rezervări
-separate — Ryanair OTP→VIE (€37 / pers), Kiwi.com pentru VIE→BKK→BRU (€559 / pers, tarif
-Basic; Guarantee ar fi €625), plus cursa CRL→OTP (€48 / pers). Total €2.576 pentru 4, €644
-de persoană. Cere o noapte de cazare în Viena, neinclusă.
+**Bangkok, 13 feb – 1 mar 2027.** Două variante, pe tab-uri (id-uri `ba` / `bb`):
 
-Două capcane, amândouă în document: aterizăm la **Bruxelles-Zaventem (BRU)** și plecăm de
-la **Charleroi (CRL)**, două aeroporturi la vreo 60 km, cu transferul pe cont propriu — de
-aceea cursa de €45 de la 06:40 e imposibilă și am folosit-o pe cea de €48 de la 14:50. Iar
-toate prețurile sunt căutate pentru **un singur pasager**, deci trebuie refăcută căutarea
-pentru 4. Rămâne de lămurit și viza de tranzit pentru China, la escala de 4h 20m din
-Beijing.
+- **A — via Viena**, €2.576 pentru 4 (€644 / pers). Rută închisă: dus prin Viena și
+  Singapore cu Scoot, întors prin Beijing și Bruxelles cu Hainan. Trei rezervări — Ryanair
+  OTP→VIE (€37 / pers), Kiwi VIE→BKK→BRU (€559 / pers Basic; Guarantee €625), cursa CRL→OTP
+  (€48 / pers). Noapte de cazare în Viena. Capcane: aterizăm la **Bruxelles-Zaventem** și
+  plecăm de la **Charleroi**, ~60 km — de aceea cursa de €45 de la 06:40 e imposibilă și am
+  folosit-o pe cea de €48 de la 14:50; toate prețurile sunt căutate pentru **un singur
+  pasager**; și rămâne de lămurit viza de tranzit pentru China.
+- **B — Kuwait Airways**, €2.381 pentru 4 (€595 / pers), **cea mai ieftină**. Wizz OTP↔DXB
+  dus-întors (lei 4.832) plus Kuwait Airways DXB↔BKK cu escală la Kuwait (AED 6.224 pentru
+  4). Doar **două rezervări**, cel mai simplu din tot documentul. Noapte în Dubai la dus.
+  Atenție la bagaj: dusul e Economy SAVER cu **1 × 32 kg inclus**, dar întorsul e „Economy
+  Class Zero Bag" — **fără niciun bagaj de cală**. Plecarea din Bangkok e la 03:00.
+
+A mai existat o variantă cu Air Arabia din Sharjah (€2.669), scoasă la cererea lui Mark
+fiindcă datele din căutare nu se potriveau.
 
 **Ho Chi Minh, 13 – 28 feb 2027.** Trei variante, pe tab-uri ca la Manila:
 
@@ -210,6 +215,29 @@ AUH→LCA (AED 896) și LCA→OTP (€199,96), cu încă o noapte în Larnaca. T
 Aici taxa Kiwi Guarantee e **€254 de persoană**, de patru ori mai mare decât la Bangkok și
 Ho Chi Minh, unde era €66 — e pus la „de verificat", fiindcă schimbă mult calculul dacă
 vrem protecție.
+
+**Da Nang, 14 – 28 feb 2027.** Singura variantă cu **bagaj de cală inclus** (25 kg, scris
+în condițiile de tarif). Wizz OTP→DXB (lei 1.536), Singapore Airlines DXB↔DAD (AED 7.760
+pentru 4, cel mai mic tarif SQ din document), apoi acasă prin Abu Dhabi și Larnaca cu Wizz.
+Total €2.524 pentru 4, €630 de persoană. Bucata Singapore↔Da Nang e operată de **Scoot**,
+cu aceleași condiții de tarif dar fără divertisment la bord.
+
+Zborul SQ pleacă din Dubai **luni 15 feb**, deci venim cu Wizz duminică 14 și dormim o
+noapte în Dubai — dacă am veni sâmbătă ca la celelalte destinații, ar fi două. Prețul și
+orele Wizz din tabel sunt însă cele găsite pentru 13 feb, de recăutat pentru 14. La întors
+sunt 17h de escală în Singapore, peste noapte, plus același transfer strâns de 3 ore
+Dubai→Abu Dhabi ca la Ho Chi Minh C. Sejurul e cel mai scurt din document: 10 nopți.
+
+**Maldive, 14 – 25 feb 2027.** Singura destinație cu alte date: plecăm duminică 14 și
+suntem acasă joi 25 februarie, deci ies doar **9 nopți**, cel mai scurt sejur din document.
+Wizz OTP↔DXB dus-întors (lei 4.152) plus Air Arabia SHJ↔MLE (AED 7.227 pentru 4), în total
+€2.487, €621 de persoană. **Cel mai scurt drum din tot documentul** — 4h 25m dus și 4h 30m
+întors, direct, fără escală.
+
+Costul ascuns e transferul Dubai→Sharjah de la dus: aterizăm la 20:20 și Air Arabia pleacă
+la 02:45, deci noaptea se duce pe cei 25 km și pe așteptare, chiar dacă nu plătim hotel. La
+întors transferul e ziua, cu 6h 20m la dispoziție. Întorsul Air Arabia e mai scump decât
+dusul: AED 1.021 față de AED 785 de persoană.
 
 ## De făcut
 
