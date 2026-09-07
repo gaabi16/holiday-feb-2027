@@ -63,10 +63,10 @@ h3{font-size:12.5px; font-weight:600; color:var(--ink-faint); margin:0 0 12px; l
   border-color:var(--amber); background:var(--amber-soft); color:var(--ink)}
 #sa:focus-visible~.tabbar label[for=sa],#sb:focus-visible~.tabbar label[for=sb],#sc:focus-visible~.tabbar label[for=sc]{outline:2px solid var(--amber); outline-offset:2px}
 #sa:checked~.pane-a,#sb:checked~.pane-b,#sc:checked~.pane-c{display:block}
-#ba:checked~.tabbar label[for=ba],#bb:checked~.tabbar label[for=bb]{
+#ba:checked~.tabbar label[for=ba],#bb:checked~.tabbar label[for=bb],#bc:checked~.tabbar label[for=bc]{
   border-color:var(--amber); background:var(--amber-soft); color:var(--ink)}
-#ba:focus-visible~.tabbar label[for=ba],#bb:focus-visible~.tabbar label[for=bb]{outline:2px solid var(--amber); outline-offset:2px}
-#ba:checked~.pane-a,#bb:checked~.pane-b{display:block}
+#ba:focus-visible~.tabbar label[for=ba],#bb:focus-visible~.tabbar label[for=bb],#bc:focus-visible~.tabbar label[for=bc]{outline:2px solid var(--amber); outline-offset:2px}
+#ba:checked~.pane-a,#bb:checked~.pane-b,#bc:checked~.pane-c{display:block}
 
 .split{display:grid; grid-template-columns:minmax(280px,370px) 1fr; gap:30px; align-items:start}
 .globe{position:relative; user-select:none; -webkit-user-select:none}
