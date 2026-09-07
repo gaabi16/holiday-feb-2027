@@ -26,6 +26,9 @@
   var LGW = { code: "LGW", lon: -0.182, lat: 51.154 };
   var LTN = { code: "LTN", lon: -0.368, lat: 51.875 };
   var LCA = { code: "LCA", lon: 33.625, lat: 34.875 };
+  var SHJ = { code: "SHJ", lon: 55.517, lat: 25.329 };
+  var HKT = { code: "HKT", lon: 98.317, lat: 8.113 };
+  var MCT = { code: "MCT", lon: 58.284, lat: 23.593 };
 
   var ROUTES = {
     "mnl-a": {
@@ -91,6 +94,19 @@
         { from: 1, to: 3, text: ["16h 05m", "escală SIN 2h 10m"] },
         { from: 3, to: 5, text: ["16h 30m", "escală ASB 1h 20m"] },
         { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
+      ]
+    },
+    "hkt": {
+      /* două transferuri pe uscat, amândouă în Golf: Dubai→Sharjah la dus,
+         Dubai→Abu Dhabi la întors */
+      points: [OTP, DXB, SHJ, HKT, MCT, DXB, AUH, LCA, OTP],
+      ground: [1, 5],
+      spans: [
+        { from: 0, to: 1, text: ["5h 05m"] },
+        { from: 1, to: 2, text: ["transfer", "25 km"], ground: true },
+        { from: 2, to: 3, text: ["6h 20m"] },
+        { from: 3, to: 5, text: ["10h 15m", "escală MCT 2h 35m"] },
+        { from: 5, to: 6, text: ["transfer", "130 km"], ground: true }
       ]
     },
     "kul": {
