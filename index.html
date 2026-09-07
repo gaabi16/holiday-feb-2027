@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260914">
+<link rel="stylesheet" href="style.css?v=20260915">
 </head>
 <body>
 <div class="wrap">
@@ -979,139 +979,396 @@
 <details class="dest">
   <summary>
     <div class="dname"><span class="num">04</span>Ho Chi Minh, Vietnam</div>
-    <div class="dmeta">13 – 28 februarie · în cerc, prin Viena la dus și prin Londra la întors</div>
-    <div class="dprice">€647 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
-    <div class="dsub">€2.588 total · doar zboruri</div>
+    <div class="dmeta">13 – 28 februarie · trei variante de zbor</div>
+    <div class="dprice">€642–697 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
+    <div class="dsub">€2.571–2.789 total · doar zboruri</div>
   </summary>
 
   <div class="body">
 
-    <p class="intro">A doua rută în cerc, și mai încâlcită decât Bangkok: dus prin Viena și Singapore, întors prin Așgabat și Londra. Ca la Bangkok, dormim o noapte în Viena la dus. Partea delicată e la întors — aterizăm la un aeroport al Londrei și plecăm de la altul.</p>
+    <p class="intro">A merge în cerc: dus prin Viena și Singapore, întors prin Așgabat și Londra, pe trei rezervări separate. B și C pleacă la fel — Wizz până la Dubai, apoi același zbor Singapore Airlines — și diferă doar la întoarcere: B revine tot prin Dubai, C ocolește prin Abu Dhabi și Larnaca.</p>
 
-    <div class="split">
-      <div class="globe" data-route="sgn">
-        <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Viena – Singapore – Ho Chi Minh, întors prin Așgabat și Londra. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
-        <div class="gctl">
-          <button type="button" data-act="in" aria-label="Apropie">+</button>
-          <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
-          <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
-          <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+    <div class="tablewrap">
+    <table class="compare">
+      <tr>
+        <th></th>
+        <th>A &middot; via Viena</th>
+        <th>B &middot; Singapore Airlines</th>
+        <th>C &middot; Singapore Airlines + Larnaca</th>
+      </tr>
+      <tr><td>Cum ajungem</td><td>Ryanair la Viena, apoi Scoot</td><td>Wizz la Dubai, apoi Singapore Airlines</td><td>Wizz la Dubai, apoi Singapore Airlines</td></tr>
+      <tr><td>Cum ne întoarcem</td><td>Turkmenistan la Londra, apoi Wizz</td><td>Singapore Airlines la Dubai, apoi Wizz</td><td>Singapore Airlines la Dubai, apoi Wizz prin Larnaca</td></tr>
+      <tr><td>Zboruri, 4 persoane</td><td class="k">€2.588</td><td class="k">€2.789</td><td class="k good">€2.571</td></tr>
+      <tr><td>De persoană</td><td class="k">€647</td><td class="k">€697</td><td class="k good">€642</td></tr>
+      <tr><td>Nopți de cazare pe drum</td><td class="good">1 — Viena</td><td class="good">1 — Dubai</td><td class="bad">2 — Dubai și Larnaca</td></tr>
+      <tr><td>Plecăm din Ho Chi Minh</td><td class="bad">sâmbătă 27 feb, 04:10</td><td class="good">sâmbătă 27 feb, 19:55</td><td class="bad">sâmbătă 27 feb, 05:55</td></tr>
+      <tr><td>Acasă</td><td>duminică 28 feb, 12:55</td><td class="bad">luni 1 martie, 00:40</td><td class="good">duminică 28 feb, 12:40</td></tr>
+      <tr><td>Punctul slab</td><td class="bad">Gatwick &rarr; Luton, &asymp;90 km</td><td class="bad">3h 05m, T1 &rarr; T2 la Dubai</td><td class="bad">3h pentru 130 km, Dubai &rarr; Abu Dhabi</td></tr>
+      <tr><td>Escale</td><td>Singapore 2h 10m, Așgabat 1h 20m</td><td class="bad">Singapore 6h 40m și 15h 35m</td><td>Singapore 6h 40m și 5h 25m</td></tr>
+    </table>
+    </div>
+
+    <div class="tabs">
+      <input type="radio" name="sgn" id="sa" checked>
+      <input type="radio" name="sgn" id="sb">
+      <input type="radio" name="sgn" id="sc">
+      <div class="tabbar">
+        <label for="sa"><b>Varianta A · via Viena</b>€2.588 · trei rezervări separate</label>
+        <label for="sb"><b>Varianta B · Singapore Airlines</b>€2.789 · o zi în plus în Vietnam</label>
+        <label for="sc"><b>Varianta C · SQ + Larnaca</b>€2.571 · cea mai ieftină, dar transferul e strâns</label>
+      </div>
+
+      <div class="pane pane-a">
+        <div class="split">
+          <div class="globe" data-route="sgn-a">
+            <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Viena – Singapore – Ho Chi Minh, întors prin Așgabat și Londra. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+            <div class="gctl">
+              <button type="button" data-act="in" aria-label="Apropie">+</button>
+              <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+              <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+              <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+            </div>
+          </div>
+          <div class="route">
+            <h3>Dus</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">OTP 21:50 <em>&rarr;</em> VIE 22:30</div>
+                <div class="det">sâmbătă 13 feb · Ryanair · <span>1h 40m · direct</span></div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Viena</strong><span>13 &rarr; 14 feb · 11h 30m până la zborul următor, cazare neinclusă în preț</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">VIE 10:00 <em>&rarr;</em> SIN 04:40<sup>+1</sup></div>
+                <div class="det">duminică 14 feb · Scoot · <span>11h 40m</span></div>
+              </div>
+            </div>
+            <div class="gap">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt">2h 10m escală în Singapore, dimineața devreme</div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">SIN 06:50 <em>&rarr;</em> SGN 08:05</div>
+                <div class="det">luni 15 feb · Scoot · <span>2h 15m · 16h 05m de la Viena, ajungem dimineața</span></div>
+              </div>
+            </div>
+
+            <h3>Întors</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">SGN 04:10 <em>&rarr;</em> ASB 10:20</div>
+                <div class="det">sâmbătă 27 feb · Turkmenistan Airlines · <span>8h 10m · plecare în toiul nopții</span></div>
+              </div>
+            </div>
+            <div class="gap">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>1h 20m escală în Așgabat — foarte strâns</strong><span>E în aceeași rezervare Kiwi, cu aceeași companie, deci ne rebookează ei dacă o ratăm</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">ASB 11:40 <em>&rarr;</em> LGW 13:40</div>
+                <div class="det">sâmbătă 27 feb · Turkmenistan Airlines · <span>7h · 16h 30m de la Ho Chi Minh</span></div>
+              </div>
+            </div>
+            <div class="gap ground risk">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>Aterizăm la Gatwick, plecăm de la Luton</strong><span>Vreo 90 km, de o parte și de alta a Londrei · avem 5h 15m, iar transferul e pe cont propriu</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">LTN 18:55 <em>&rarr;</em> OTP 00:10<sup>+1</sup></div>
+                <div class="det">sâmbătă 27 feb · Wizz Air · <span>3h 15m · acasă duminică la 00:10, după miezul nopții</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>Cost zboruri</h3>
+            <table class="cost">
+              <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+              <tr><td>OTP &rarr; VIE · Ryanair</td><td>EUR</td><td>148</td><td>37</td></tr>
+              <tr><td>VIE &rarr; SGN &rarr; LGW · Kiwi</td><td>EUR</td><td>2.224</td><td>556</td></tr>
+              <tr><td>LTN &rarr; OTP · Wizz</td><td>EUR</td><td>216</td><td>54</td></tr>
+            </table>
+            <div class="totals">
+              <div class="tot"><div class="n">€2.588</div><div class="l">total, 4 persoane</div></div>
+              <div class="tot"><div class="n">€647</div><div class="l">de persoană</div></div>
+            </div>
+          </div>
+          <div>
+            <h3>Cum ieftinim</h3>
+            <div class="save">
+              <b>Kiwi Basic, nu Guarantee</b>
+              €556 / pers față de €622 cu Kiwi.com Guarantee. <span class="amt">−€66 de persoană, −€264 în total</span> · dar Basic nu ne acoperă cu nimic dacă se anulează un zbor, iar check-in-ul îl facem manual.
+            </div>
+            <div class="save">
+              <b>Zborul de la Londra nu are zi mai bună</b>
+              €44 joi 25 și duminică 28, față de €54 sâmbătă 27. Dar 25 e înainte să ajungem, iar 28 ar cere o noapte la Londra — mult peste cei <span class="amt">€40</span> economisiți.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>De știut</h3>
+            <ul>
+              <li><strong>Trei rezervări separate</strong> — Ryanair până la Viena, Kiwi pentru Viena → Ho Chi Minh → Londra, și Wizz de la Luton acasă. Dacă pică una, celelalte nu se rebookează.</li>
+              <li><strong>Zborul Wizz de la Luton de la 09:30 e imposibil</strong> — aterizăm la Gatwick abia la 13:40. În tabel e cursa de la 18:55, la același preț.</li>
+              <li>Plecarea din Ho Chi Minh e la 04:10, deci ultima noapte se duce pe drum spre aeroport.</li>
+              <li>Scoot e low-cost: prețul are un bagaj de mână, bagajul de cală se plătește separat.</li>
+              <li><strong>12 nopți în Ho Chi Minh</strong>, de luni 15 până sâmbătă 27 februarie.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>De verificat</h3>
+            <ul class="chk">
+              <li><strong>Viza de tranzit pentru Turkmenistan</strong> la escala din Așgabat</li>
+              <li><strong>Prețurile sunt căutate pentru un singur pasager</strong> — de refăcut căutarea pentru 4</li>
+              <li>Cum ajungem de la Gatwick la Luton, cât ia și cât costă pentru 4</li>
+              <li>Hotel în Viena pentru noaptea de 13 &rarr; 14 februarie</li>
+              <li>Cost bagaj de cală la Scoot, Turkmenistan Airlines și Wizz</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="route">
-        <h3>Dus</h3>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
-          <div>
-            <div class="t">OTP 21:50 <em>&rarr;</em> VIE 22:30</div>
-            <div class="det">sâmbătă 13 feb · Ryanair · <span>1h 40m · direct</span></div>
+
+      <div class="pane pane-b">
+        <div class="split">
+          <div class="globe" data-route="sgn-b">
+            <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Dubai – Singapore – Ho Chi Minh, dus și întors pe același drum. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+            <div class="gctl">
+              <button type="button" data-act="in" aria-label="Apropie">+</button>
+              <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+              <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+              <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+            </div>
           </div>
-        </div>
-        <div class="stay">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt"><strong>Noapte în Viena</strong><span>13 &rarr; 14 feb · 11h 30m până la zborul următor, cazare neinclusă în preț</span></div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
-          <div>
-            <div class="t">VIE 10:00 <em>&rarr;</em> SIN 04:40<sup>+1</sup></div>
-            <div class="det">duminică 14 feb · Scoot · <span>11h 40m</span></div>
-          </div>
-        </div>
-        <div class="gap">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt">2h 10m escală în Singapore, dimineața devreme</div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i></div>
-          <div>
-            <div class="t">SIN 06:50 <em>&rarr;</em> SGN 08:05</div>
-            <div class="det">luni 15 feb · Scoot · <span>2h 15m · 16h 05m de la Viena, ajungem dimineața</span></div>
+          <div class="route">
+            <h3>Dus</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">OTP 13:15 <em>&rarr;</em> DXB 20:20</div>
+                <div class="det">sâmbătă 13 feb · Wizz Air W4 3267 · <span>5h 05m · sosire Terminal 2</span></div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Dubai</strong><span>13 &rarr; 14 feb · aproape 24h până la zborul următor</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">DXB 19:50 <em>&rarr;</em> SGN 15:05<sup>+1</sup></div>
+                <div class="det">duminică 14 feb · SQ 495 + SQ 184 · <span>16h 15m · escală Singapore 6h 40m · plecare Terminal 1</span></div>
+              </div>
+            </div>
+
+            <h3>Întors</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">SGN 19:55 <em>&rarr;</em> DXB 18:00<sup>+1</sup></div>
+                <div class="det">sâmbătă 27 feb · SQ 185 + SQ 494 · <span>25h 05m · escală Singapore 15h 35m · sosire Terminal 1</span></div>
+              </div>
+            </div>
+            <div class="gap">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>3h 05m și schimbare de terminal</strong><span>T1 &rarr; T2 pe șosea, bilete separate, bagaje de recuperat — aceeași problemă ca la Manila</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">DXB 21:05 <em>&rarr;</em> OTP 00:40<sup>+1</sup></div>
+                <div class="det">duminică 28 feb · Wizz Air W4 3268 · <span>5h 35m · aterizare luni 1 martie</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <h3>Întors</h3>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
+        <div class="grid2">
           <div>
-            <div class="t">SGN 04:10 <em>&rarr;</em> ASB 10:20</div>
-            <div class="det">sâmbătă 27 feb · Turkmenistan Airlines · <span>8h 10m · plecare în toiul nopții</span></div>
+            <h3>Cost zboruri</h3>
+            <table class="cost">
+              <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+              <tr><td>OTP &rarr; DXB · Wizz</td><td>RON</td><td>292</td><td>73</td></tr>
+              <tr><td>DXB &harr; SGN · Singapore Airlines</td><td>AED</td><td>1.869</td><td>467</td></tr>
+              <tr><td>DXB &rarr; OTP · Wizz</td><td>RON</td><td>628</td><td>157</td></tr>
+            </table>
+            <div class="totals">
+              <div class="tot"><div class="n">€2.789</div><div class="l">total, 4 persoane</div></div>
+              <div class="tot"><div class="n">€697</div><div class="l">de persoană</div></div>
+            </div>
+          </div>
+          <div>
+            <h3>Ce câștigăm</h3>
+            <div class="save">
+              <b>O zi întreagă în plus în Vietnam</b>
+              Plecăm sâmbătă 27 februarie la 19:55, nu la 04:10 ca la varianta A. Sâmbăta rămâne zi întreagă în Ho Chi Minh, în loc să se ducă pe drumul spre aeroport în toiul nopții.
+            </div>
+            <div class="save">
+              <b>O singură companie pe bucata lungă</b>
+              Singapore Airlines duce dus-întors, cu escală la Singapore pe același bilet. Dacă întârziem, ne rebookează ei — spre deosebire de A, unde sunt trei rezervări separate.
+            </div>
           </div>
         </div>
-        <div class="gap">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt risk"><strong>1h 20m escală în Așgabat — foarte strâns</strong><span>E în aceeași rezervare Kiwi, cu aceeași companie, deci ne rebookează ei dacă o ratăm</span></div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
+
+        <div class="grid2">
           <div>
-            <div class="t">ASB 11:40 <em>&rarr;</em> LGW 13:40</div>
-            <div class="det">sâmbătă 27 feb · Turkmenistan Airlines · <span>7h · 16h 30m de la Ho Chi Minh</span></div>
+            <h3>De știut</h3>
+            <ul>
+              <li><strong>E cu €201 mai scumpă decât varianta A</strong>, dar are o singură noapte de cazare, în Dubai, față de una în Viena — deci diferența reală e mai mică.</li>
+              <li><strong>Escala de la întors e de 15h 35m în Singapore</strong>, în aeroport, între 09:05 și 14:30 a doua zi. La dus e de 6h 40m.</li>
+              <li><strong>Riscul e la Dubai, la întors:</strong> 3h 05m între aterizarea Singapore Airlines la Terminalul 1 și zborul Wizz de la Terminalul 2, pe bilete separate. Exact problema de la Manila.</li>
+              <li>Ajungem acasă luni 1 martie la 00:40, după miezul nopții.</li>
+              <li>Tariful Singapore Airlines e Economy Lite — de verificat ce include la bagaje.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>De verificat</h3>
+            <ul class="chk">
+              <li><strong>Prețul Wizz de întors e cel de Discount Club</strong>, lei 824 de persoană; fără abonament e lei 879</li>
+              <li>Dacă rezervarea 1 + 3 de la Manila merge și aici — ar coborî întorsul de la €628 la €613</li>
+              <li>Cazare în Dubai, 13 &rarr; 14 februarie, pentru 4 persoane</li>
+              <li>Ce include tariful Economy Lite la bagajul de cală</li>
+              <li>Cât durează realist transferul T1 &rarr; T2 la Dubai, seara</li>
+              <li>Dacă merită o noapte în Singapore la întors, în loc de 15h 35m în aeroport</li>
+            </ul>
           </div>
         </div>
-        <div class="gap ground risk">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt risk"><strong>Aterizăm la Gatwick, plecăm de la Luton</strong><span>Vreo 90 km, de o parte și de alta a Londrei · avem 5h 15m, iar transferul e pe cont propriu</span></div>
+      </div>
+
+      <div class="pane pane-c">
+        <div class="split">
+          <div class="globe" data-route="sgn-c">
+            <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Dubai – Singapore – Ho Chi Minh, întors prin Abu Dhabi și Larnaca. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+            <div class="gctl">
+              <button type="button" data-act="in" aria-label="Apropie">+</button>
+              <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+              <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+              <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+            </div>
+          </div>
+          <div class="route">
+            <h3>Dus</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">OTP 13:15 <em>&rarr;</em> DXB 20:20</div>
+                <div class="det">sâmbătă 13 feb · Wizz Air W4 3267 · <span>5h 05m · sosire Terminal 2</span></div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Dubai</strong><span>13 &rarr; 14 feb · aproape 24h până la zborul următor</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">DXB 19:50 <em>&rarr;</em> SGN 15:05<sup>+1</sup></div>
+                <div class="det">duminică 14 feb · SQ 495 + SQ 184 · <span>16h 15m · escală Singapore 6h 40m · plecare Terminal 1</span></div>
+              </div>
+            </div>
+
+            <h3>Întors</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">SGN 05:55 <em>&rarr;</em> DXB 18:00</div>
+                <div class="det">sâmbătă 27 feb · SQ 187 + SQ 494 · <span>15h 05m · escală Singapore 5h 25m · sosire Terminal 1</span></div>
+              </div>
+            </div>
+            <div class="gap ground risk">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>3h pentru 130 km, Dubai &rarr; Abu Dhabi</strong><span>Punctul slab al variantei: aterizăm la 18:00, Wizz pleacă la 21:00 din alt oraș, iar check-in-ul se închide cu o oră înainte</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">AUH 21:00 <em>&rarr;</em> LCA 23:55</div>
+                <div class="det">sâmbătă 27 feb · Wizz Air W6 4618 · <span>4h 55m</span></div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Larnaca</strong><span>27 &rarr; 28 feb · aterizăm la 23:55 și plecăm la 10:10</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">LCA 10:10 <em>&rarr;</em> OTP 12:40</div>
+                <div class="det">duminică 28 feb · Wizz Air W4 3026 · <span>2h 30m · acasă duminică la prânz</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="leg">
-          <div class="rail"><i></i></div>
+
+        <div class="grid2">
           <div>
-            <div class="t">LTN 18:55 <em>&rarr;</em> OTP 00:10<sup>+1</sup></div>
-            <div class="det">sâmbătă 27 feb · Wizz Air · <span>3h 15m · acasă duminică la 00:10, după miezul nopții</span></div>
+            <h3>Cost zboruri</h3>
+            <table class="cost">
+              <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+              <tr><td>OTP &rarr; DXB · Wizz</td><td>RON</td><td>292</td><td>73</td></tr>
+              <tr><td>DXB &harr; SGN · Singapore Airlines</td><td>AED</td><td>1.869</td><td>467</td></tr>
+              <tr><td>AUH &rarr; LCA · Wizz</td><td>AED</td><td>210</td><td>52</td></tr>
+              <tr><td>LCA &rarr; OTP · Wizz</td><td>EUR</td><td>200</td><td>50</td></tr>
+            </table>
+            <div class="totals">
+              <div class="tot"><div class="n">€2.571</div><div class="l">total, 4 persoane</div></div>
+              <div class="tot"><div class="n">€642</div><div class="l">de persoană</div></div>
+            </div>
+          </div>
+          <div>
+            <h3>Ce câștigăm</h3>
+            <div class="save">
+              <b>Cea mai ieftină dintre cele trei</b>
+              €2.571 față de €2.588 la A și €2.789 la B. <span class="amt">−€218</span> față de B, la același zbor Singapore Airlines la dus — diferența vine din felul în care ne întoarcem acasă.
+            </div>
+            <div class="save">
+              <b>Acasă duminică la prânz, cu escale scurte</b>
+              Ajungem la 12:40 pe 28 februarie, cel mai devreme dintre cele trei. Escalele din Singapore sunt de 6h 40m și 5h 25m, față de 15h 35m la varianta B.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>De știut</h3>
+            <ul>
+              <li><strong>Transferul din Golf e cel mai strâns de până acum:</strong> 3 ore pentru 130 km între Dubai și Abu Dhabi, din care se scade check-in-ul Wizz care se închide cu o oră înainte. La Phuket aveam 5h 05m pentru același drum.</li>
+              <li><strong>Două nopți de cazare</strong> — Dubai la dus și Larnaca la întors, față de una singură la A și B.</li>
+              <li><strong>Plecăm din Ho Chi Minh la 05:55</strong>, deci ultima zi se duce. La varianta B plecăm la 19:55.</li>
+              <li>Escalele din Singapore sunt mai scurte decât la B: 6h 40m la dus și 5h 25m la întors, față de 15h 35m.</li>
+              <li>Costă cu €17 mai puțin decât varianta A, dar cere două nopți de cazare în loc de una.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>De verificat</h3>
+            <ul class="chk">
+              <li><strong>Dacă cele 3 ore ajung realist</strong> pentru Dubai &rarr; Abu Dhabi plus check-in — altfel varianta pică</li>
+              <li>Cost și durată bus sau taxi Dubai &rarr; Abu Dhabi</li>
+              <li>Cazare în Dubai 13 &rarr; 14 feb și în Larnaca 27 &rarr; 28 feb</li>
+              <li>Ce include tariful Economy Lite la bagajul de cală</li>
+              <li>Dacă există un zbor Wizz mai târziu din Abu Dhabi, ca să avem marjă</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="grid2">
-      <div>
-        <h3>Cost zboruri</h3>
-        <table class="cost">
-          <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
-          <tr><td>OTP &rarr; VIE · Ryanair</td><td>EUR</td><td>148</td><td>37</td></tr>
-          <tr><td>VIE &rarr; SGN &rarr; LGW · Kiwi</td><td>EUR</td><td>2.224</td><td>556</td></tr>
-          <tr><td>LTN &rarr; OTP · Wizz</td><td>EUR</td><td>216</td><td>54</td></tr>
-        </table>
-        <div class="totals">
-          <div class="tot"><div class="n">€2.588</div><div class="l">total, 4 persoane</div></div>
-          <div class="tot"><div class="n">€647</div><div class="l">de persoană</div></div>
-        </div>
-      </div>
-      <div>
-        <h3>Cum ieftinim</h3>
-        <div class="save">
-          <b>Kiwi Basic, nu Guarantee</b>
-          €556 / pers față de €622 cu Kiwi.com Guarantee. <span class="amt">−€66 de persoană, −€264 în total</span> · dar Basic nu ne acoperă cu nimic dacă se anulează un zbor, iar check-in-ul îl facem manual.
-        </div>
-        <div class="save">
-          <b>Zborul de la Londra nu are zi mai bună</b>
-          €44 joi 25 și duminică 28, față de €54 sâmbătă 27. Dar 25 e înainte să ajungem, iar 28 ar cere o noapte la Londra — mult peste cei <span class="amt">€40</span> economisiți.
-        </div>
-      </div>
-    </div>
-
-    <div class="grid2">
-      <div>
-        <h3>De știut</h3>
-        <ul>
-          <li><strong>Trei rezervări separate</strong> — Ryanair până la Viena, Kiwi pentru Viena → Ho Chi Minh → Londra, și Wizz de la Luton acasă. Dacă pică una, celelalte nu se rebookează.</li>
-          <li><strong>Zborul Wizz de la Luton de la 09:30 e imposibil</strong> — aterizăm la Gatwick abia la 13:40. În tabel e cursa de la 18:55, la același preț.</li>
-          <li>Plecarea din Ho Chi Minh e la 04:10, deci ultima noapte se duce pe drum spre aeroport.</li>
-          <li>Scoot e low-cost: prețul are un bagaj de mână, bagajul de cală se plătește separat.</li>
-          <li><strong>12 nopți în Ho Chi Minh</strong>, de luni 15 până sâmbătă 27 februarie.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>De verificat</h3>
-        <ul class="chk">
-          <li><strong>Viza de tranzit pentru Turkmenistan</strong> la escala din Așgabat</li>
-          <li><strong>Prețurile sunt căutate pentru un singur pasager</strong> — de refăcut căutarea pentru 4</li>
-          <li>Cum ajungem de la Gatwick la Luton, cât ia și cât costă pentru 4</li>
-          <li>Hotel în Viena pentru noaptea de 13 &rarr; 14 februarie</li>
-          <li>Cost bagaj de cală la Scoot, Turkmenistan Airlines și Wizz</li>
-        </ul>
-      </div>
-    </div>
 
   </div>
 </details>
@@ -1270,6 +1527,6 @@
 </footer>
 
 </div>
-<script src="globe.js?v=20260914"></script>
+<script src="globe.js?v=20260915"></script>
 </body>
 </html>
