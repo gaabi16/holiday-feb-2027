@@ -31,6 +31,8 @@
   var MCT = { code: "MCT", lon: 58.284, lat: 23.593 };
   var DAD = { code: "DAD", lon: 108.199, lat: 16.044 };
   var MLE = { code: "MLE", lon: 73.529, lat: 4.192 };
+  var ADD = { code: "ADD", lon: 38.799, lat: 8.978 };
+  var ZNZ = { code: "ZNZ", lon: 39.225, lat: -6.222 };
 
   var ROUTES = {
     "mnl-a": {
@@ -109,6 +111,13 @@
       spans: [
         { from: 0, to: 1, text: ["5h 05m"] },
         { from: 1, to: 3, text: ["12h 10m", "escală KWI 3h 40m"] }
+      ]
+    },
+    "znz": {
+      points: [CLJ, AUH, ADD, ZNZ],
+      spans: [
+        { from: 0, to: 1, text: ["5h 10m"] },
+        { from: 1, to: 3, text: ["7h 30m", "escală ADD 35m"] }
       ]
     },
     "mle": {
