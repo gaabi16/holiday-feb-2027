@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260915">
+<link rel="stylesheet" href="style.css?v=20260918">
 </head>
 <body>
 <div class="wrap">
@@ -837,141 +837,277 @@
 <details class="dest">
   <summary>
     <div class="dname"><span class="num">03</span>Bangkok, Thailanda</div>
-    <div class="dmeta">13 – 28 februarie · trei rezervări separate, dus și întors pe rute diferite</div>
-    <div class="dprice">€644 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
-    <div class="dsub">€2.576 total · doar zboruri</div>
+    <div class="dmeta">13 – 28 februarie / 1 martie · două variante de zbor</div>
+    <div class="dprice">€595–644 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
+    <div class="dsub">€2.381–2.576 total · doar zboruri</div>
   </summary>
 
   <div class="body">
 
-    <p class="intro">Cea mai complicată rută de până acum. Mergem prin Viena și Singapore, ne întoarcem prin Beijing și Bruxelles — nu e dus-întors pe același drum, ci un cerc. Sunt trei rezervări separate, o noapte în Viena la dus, iar la întors aterizăm la un aeroport din Bruxelles și plecăm de la altul.</p>
+    <p class="intro">A merge în cerc, prin Viena și Singapore la dus și prin Beijing și Bruxelles la întors, pe trei rezervări separate. B e mult mai simplă: Wizz până la Dubai, apoi Kuwait Airways cu o escală la Kuwait, pe doar două bilete.</p>
 
-    <div class="split">
-      <div class="globe" data-route="bkk">
-        <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Viena – Singapore – Bangkok, întors prin Beijing și Bruxelles. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
-        <div class="gctl">
-          <button type="button" data-act="in" aria-label="Apropie">+</button>
-          <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
-          <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
-          <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+    <div class="tablewrap">
+    <table class="compare">
+      <tr>
+        <th></th>
+        <th>A &middot; via Viena</th>
+        
+        <th>B &middot; Kuwait Airways</th>
+      </tr>
+      <tr><td>Cum ajungem</td><td>Ryanair la Viena, apoi Scoot prin Singapore</td><td>Wizz la Dubai, apoi Kuwait Airways prin Kuwait</td></tr>
+      <tr><td>Zboruri, 4 persoane</td><td class="k">€2.576</td><td class="k good">€2.381</td></tr>
+      <tr><td>De persoană</td><td class="k">€644</td><td class="k good">€595</td></tr>
+      <tr><td>Rezervări separate</td><td class="bad">3</td><td class="good">2</td></tr>
+      <tr><td>Nopți de cazare pe drum</td><td class="bad">1 — Viena</td><td class="bad">1 — Dubai</td></tr>
+      <tr><td>Bagaj de cală</td><td class="bad">niciunde inclus</td><td>32 kg la dus, <span class="bad">nimic la întors</span></td></tr>
+      <tr><td>Escale pe bucata lungă</td><td class="bad">Singapore și Beijing</td><td>Kuwait, 3h 40m și 2h 50m</td></tr>
+      <tr><td>Punctul slab</td><td class="bad">Bruxelles &rarr; Charleroi, &asymp;60 km</td><td class="bad">plecare din Bangkok la 03:00</td></tr>
+      <tr><td>Acasă</td><td>duminică 28 feb, 18:35</td><td class="bad">luni 1 martie, 00:40</td></tr>
+    </table>
+    </div>
+
+    <div class="tabs">
+      <input type="radio" name="bkk" id="ba" checked>
+      <input type="radio" name="bkk" id="bb">
+      <div class="tabbar">
+        <label for="ba"><b>Varianta A · via Viena</b>€2.576 · în cerc, trei rezervări</label>
+        <label for="bb"><b>Varianta B · Kuwait Airways</b>€2.381 · cea mai ieftină, două rezervări</label>
+      </div>
+
+      <div class="pane pane-a">
+        <div class="split">
+          <div class="globe" data-route="bkk-a">
+            <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Viena – Singapore – Bangkok, întors prin Beijing și Bruxelles. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+            <div class="gctl">
+              <button type="button" data-act="in" aria-label="Apropie">+</button>
+              <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+              <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+              <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+            </div>
+          </div>
+          <div class="route">
+            <h3>Dus</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">OTP 21:50 <em>&rarr;</em> VIE 22:30</div>
+                <div class="det">sâmbătă 13 feb · Ryanair · <span>1h 40m · direct</span></div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Viena</strong><span>13 &rarr; 14 feb · 11h 30m până la zborul următor, cazare neinclusă în preț</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">VIE 10:00 <em>&rarr;</em> SIN 04:40<sup>+1</sup></div>
+                <div class="det">duminică 14 feb · Scoot · <span>11h 40m</span></div>
+              </div>
+            </div>
+            <div class="gap">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt">2h escală în Singapore, dimineața devreme</div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">SIN 06:40 <em>&rarr;</em> BKK 08:15</div>
+                <div class="det">luni 15 feb · Scoot · <span>2h 35m · 16h 15m de la Viena, ajungem dimineața</span></div>
+              </div>
+            </div>
+
+            <h3>Întors</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">BKK 16:20 <em>&rarr;</em> PEK 22:05</div>
+                <div class="det">sâmbătă 27 feb · Hainan Airlines · <span>4h 45m</span></div>
+              </div>
+            </div>
+            <div class="gap">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt">4h 20m escală în Beijing, noaptea</div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">PEK 02:25 <em>&rarr;</em> BRU 05:45</div>
+                <div class="det">duminică 28 feb · Hainan Airlines · <span>10h 20m · 19h 25m de la Bangkok</span></div>
+              </div>
+            </div>
+            <div class="gap ground risk">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>Aterizăm la Bruxelles-Zaventem, plecăm de la Charleroi</strong><span>Două aeroporturi diferite, la vreo 60 km — transferul e pe cont propriu, cu tren sau autobuz</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">CRL 14:50 <em>&rarr;</em> OTP 18:35</div>
+                <div class="det">duminică 28 feb · <span>2h 45m · acasă duminică seara</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>Cost zboruri</h3>
+            <table class="cost">
+              <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+              <tr><td>OTP &rarr; VIE · Ryanair</td><td>EUR</td><td>148</td><td>37</td></tr>
+              <tr><td>VIE &rarr; BKK &rarr; BRU · Kiwi</td><td>EUR</td><td>2.236</td><td>559</td></tr>
+              <tr><td>CRL &rarr; OTP</td><td>EUR</td><td>192</td><td>48</td></tr>
+            </table>
+            <div class="totals">
+              <div class="tot"><div class="n">€2.576</div><div class="l">total, 4 persoane</div></div>
+              <div class="tot"><div class="n">€644</div><div class="l">de persoană</div></div>
+            </div>
+          </div>
+          <div>
+            <h3>Cum ieftinim</h3>
+            <div class="save">
+              <b>Kiwi Basic, nu Guarantee</b>
+              €559 / pers față de €625 cu Kiwi.com Guarantee. <span class="amt">−€66 de persoană, −€264 în total</span> · dar Basic nu ne acoperă cu nimic dacă se anulează un zbor, iar check-in-ul îl facem manual.
+            </div>
+            <div class="save">
+              <b>Sâmbătă 13 februarie e cea mai ieftină zi spre Viena</b>
+              €37 / pers, față de €49 joi, €58 vineri și €61 duminică. <span class="amt">−€48 în total</span> față de plecarea de duminică.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <h3>De știut</h3>
+            <ul>
+              <li><strong>Trei rezervări separate</strong> — Ryanair până la Viena, Kiwi pentru Viena → Bangkok → Bruxelles, și zborul de la Charleroi acasă. Dacă pică una, celelalte nu se rebookează.</li>
+              <li><strong>Zborul de €45 de la Charleroi nu se poate lua.</strong> Pleacă la 06:40, iar noi aterizăm la Bruxelles-Zaventem la 05:45, la alt aeroport. În tabel e prețul de €48, pentru cursa de la 14:50.</li>
+              <li><strong>O noapte în Viena</strong>, între 13 și 14 februarie, care nu e inclusă în prețurile de mai sus.</li>
+              <li>Scoot e low-cost: prețul are un bagaj de mână, bagajul de cală se plătește separat.</li>
+              <li>Escala din Beijing e de 4h 20m, noaptea, între 22:05 și 02:25.</li>
+              <li><strong>12 nopți în Bangkok</strong>, de luni 15 până sâmbătă 27 februarie.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>De verificat</h3>
+            <ul class="chk">
+              <li><strong>Viza de tranzit pentru China</strong> la escala din Beijing — ce reguli se aplică pentru pașaport românesc</li>
+              <li><strong>Prețurile sunt căutate pentru un singur pasager</strong> — de refăcut căutarea pentru 4, la Ryanair tariful urcă</li>
+              <li>Cum ajungem de la Bruxelles-Zaventem la Charleroi, cât ia și cât costă pentru 4</li>
+              <li>Ce companie operează cursa Charleroi → București de la 14:50</li>
+              <li>Hotel în Viena pentru noaptea de 13 &rarr; 14 februarie</li>
+              <li>Cost bagaj de cală la Scoot și Hainan, dus și întors</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="route">
-        <h3>Dus</h3>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
-          <div>
-            <div class="t">OTP 21:50 <em>&rarr;</em> VIE 22:30</div>
-            <div class="det">sâmbătă 13 feb · Ryanair · <span>1h 40m · direct</span></div>
+
+      <div class="pane pane-b">
+        <div class="split">
+          <div class="globe" data-route="bkk-b">
+            <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Dubai – Kuwait – Bangkok. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+            <div class="gctl">
+              <button type="button" data-act="in" aria-label="Apropie">+</button>
+              <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+              <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+              <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+            </div>
           </div>
-        </div>
-        <div class="stay">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt"><strong>Noapte în Viena</strong><span>13 &rarr; 14 feb · 11h 30m până la zborul următor, cazare neinclusă în preț</span></div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
-          <div>
-            <div class="t">VIE 10:00 <em>&rarr;</em> SIN 04:40<sup>+1</sup></div>
-            <div class="det">duminică 14 feb · Scoot · <span>11h 40m</span></div>
-          </div>
-        </div>
-        <div class="gap">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt">2h escală în Singapore, dimineața devreme</div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i></div>
-          <div>
-            <div class="t">SIN 06:40 <em>&rarr;</em> BKK 08:15</div>
-            <div class="det">luni 15 feb · Scoot · <span>2h 35m · 16h 15m de la Viena, ajungem dimineața</span></div>
+          <div class="route">
+            <h3>Dus</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">OTP 13:15 <em>&rarr;</em> DXB 20:20</div>
+                <div class="det">sâmbătă 13 feb · Wizz Air W4 3267 · <span>5h 05m · sosire Terminal 2</span></div>
+              </div>
+            </div>
+            <div class="stay">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt"><strong>Noapte în Dubai</strong><span>13 &rarr; 14 feb · aproape 23h până la zborul următor</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">DXB 18:55 <em>&rarr;</em> BKK 10:05<sup>+1</sup></div>
+                <div class="det">duminică 14 feb · KU 674 + KU 411 · <span>12h 10m · escală Kuwait 3h 40m · plecare Terminal 1</span></div>
+              </div>
+            </div>
+
+            <h3>Întors</h3>
+            <div class="leg">
+              <div class="rail"><i></i><b></b></div>
+              <div>
+                <div class="t">BKK 03:00 <em>&rarr;</em> DXB 12:20</div>
+                <div class="det">duminică 28 feb · KU 414 + KU 671 · <span>12h 20m · escală Kuwait 2h 50m · sosire Terminal 1</span></div>
+              </div>
+            </div>
+            <div class="gap">
+              <div class="rail"><i></i><b></b></div>
+              <div class="txt risk"><strong>8h 45m în Dubai, cu schimbare de terminal</strong><span>T1 &rarr; T2 pe șosea, bilete separate — timp berechet, dar bagajele trebuie recuperate și dat check-in din nou</span></div>
+            </div>
+            <div class="leg">
+              <div class="rail"><i></i></div>
+              <div>
+                <div class="t">DXB 21:05 <em>&rarr;</em> OTP 00:40<sup>+1</sup></div>
+                <div class="det">duminică 28 feb · Wizz Air W4 3268 · <span>5h 35m · aterizare luni 1 martie</span></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <h3>Întors</h3>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
+        <div class="grid2">
           <div>
-            <div class="t">BKK 16:20 <em>&rarr;</em> PEK 22:05</div>
-            <div class="det">sâmbătă 27 feb · Hainan Airlines · <span>4h 45m</span></div>
+            <h3>Cost zboruri</h3>
+            <table class="cost">
+              <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+              <tr><td>OTP &harr; DXB · Wizz</td><td>RON</td><td>920</td><td>230</td></tr>
+              <tr><td>DXB &harr; BKK · Kuwait Airways</td><td>AED</td><td>1.461</td><td>365</td></tr>
+            </table>
+            <div class="totals">
+              <div class="tot"><div class="n">€2.381</div><div class="l">total, 4 persoane</div></div>
+              <div class="tot"><div class="n">€595</div><div class="l">de persoană</div></div>
+            </div>
+          </div>
+          <div>
+            <h3>Ce câștigăm</h3>
+            <div class="save">
+              <b>Cea mai ieftină variantă spre Bangkok</b>
+              €2.381 față de €2.576 la A și €2.669 la B. <span class="amt">−€195</span> față de următoarea, cu doar două rezervări în loc de trei.
+            </div>
+            <div class="save">
+              <b>Bagaj de 32 kg inclus — dar numai la dus</b>
+              Tariful de dus e Economy SAVER, cu 1 × 32 kg în preț. Cel de întors e „Zero Bag" și nu include niciun bagaj de cală.
+            </div>
           </div>
         </div>
-        <div class="gap">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt">4h 20m escală în Beijing, noaptea</div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i><b></b></div>
+
+        <div class="grid2">
           <div>
-            <div class="t">PEK 02:25 <em>&rarr;</em> BRU 05:45</div>
-            <div class="det">duminică 28 feb · Hainan Airlines · <span>10h 20m · 19h 25m de la Bangkok</span></div>
+            <h3>De știut</h3>
+            <ul>
+              <li><strong>Biletul de întors nu include niciun bagaj.</strong> Scrie explicit „Baggage Allowance: None included in fare". La dus avem 32 kg de persoană. Diferența trebuie plătită separat și nu e în totalul de mai sus.</li>
+              <li><strong>Plecarea din Bangkok e la 03:00</strong>, deci ultima noapte se duce pe drumul spre aeroport.</li>
+              <li>Masă inclusă pe zborurile Kuwait Airways, în ambele sensuri.</li>
+              <li>Modificarea costă maximum AED 200 de persoană, anularea maximum AED 280 — mai flexibil decât biletul Wizz.</li>
+              <li>La întors avem 8h 45m în Dubai: destul pentru transferul T1 → T2, dar tot cu bagaje de recuperat și check-in din nou.</li>
+            </ul>
           </div>
-        </div>
-        <div class="gap ground risk">
-          <div class="rail"><i></i><b></b></div>
-          <div class="txt risk"><strong>Aterizăm la Bruxelles-Zaventem, plecăm de la Charleroi</strong><span>Două aeroporturi diferite, la vreo 60 km — transferul e pe cont propriu, cu tren sau autobuz</span></div>
-        </div>
-        <div class="leg">
-          <div class="rail"><i></i></div>
           <div>
-            <div class="t">CRL 14:50 <em>&rarr;</em> OTP 18:35</div>
-            <div class="det">duminică 28 feb · <span>2h 45m · acasă duminică seara</span></div>
+            <h3>De verificat</h3>
+            <ul class="chk">
+              <li><strong>Cât costă bagajul de cală pe biletul de întors</strong>, care vine fără niciunul</li>
+              <li>Cazare în Dubai, 13 &rarr; 14 februarie, pentru 4 persoane</li>
+              <li>Cost bagaj de cală la Wizz, dus și întors</li>
+              <li>Cât durează realist transferul T1 &rarr; T2 la Dubai, la prânz</li>
+              <li>Dacă se poate cumpăra tot tariful SAVER și la întors, ca să avem bagaj în ambele sensuri</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="grid2">
-      <div>
-        <h3>Cost zboruri</h3>
-        <table class="cost">
-          <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
-          <tr><td>OTP &rarr; VIE · Ryanair</td><td>EUR</td><td>148</td><td>37</td></tr>
-          <tr><td>VIE &rarr; BKK &rarr; BRU · Kiwi</td><td>EUR</td><td>2.236</td><td>559</td></tr>
-          <tr><td>CRL &rarr; OTP</td><td>EUR</td><td>192</td><td>48</td></tr>
-        </table>
-        <div class="totals">
-          <div class="tot"><div class="n">€2.576</div><div class="l">total, 4 persoane</div></div>
-          <div class="tot"><div class="n">€644</div><div class="l">de persoană</div></div>
-        </div>
-      </div>
-      <div>
-        <h3>Cum ieftinim</h3>
-        <div class="save">
-          <b>Kiwi Basic, nu Guarantee</b>
-          €559 / pers față de €625 cu Kiwi.com Guarantee. <span class="amt">−€66 de persoană, −€264 în total</span> · dar Basic nu ne acoperă cu nimic dacă se anulează un zbor, iar check-in-ul îl facem manual.
-        </div>
-        <div class="save">
-          <b>Sâmbătă 13 februarie e cea mai ieftină zi spre Viena</b>
-          €37 / pers, față de €49 joi, €58 vineri și €61 duminică. <span class="amt">−€48 în total</span> față de plecarea de duminică.
-        </div>
-      </div>
-    </div>
-
-    <div class="grid2">
-      <div>
-        <h3>De știut</h3>
-        <ul>
-          <li><strong>Trei rezervări separate</strong> — Ryanair până la Viena, Kiwi pentru Viena → Bangkok → Bruxelles, și zborul de la Charleroi acasă. Dacă pică una, celelalte nu se rebookează.</li>
-          <li><strong>Zborul de €45 de la Charleroi nu se poate lua.</strong> Pleacă la 06:40, iar noi aterizăm la Bruxelles-Zaventem la 05:45, la alt aeroport. În tabel e prețul de €48, pentru cursa de la 14:50.</li>
-          <li><strong>O noapte în Viena</strong>, între 13 și 14 februarie, care nu e inclusă în prețurile de mai sus.</li>
-          <li>Scoot e low-cost: prețul are un bagaj de mână, bagajul de cală se plătește separat.</li>
-          <li>Escala din Beijing e de 4h 20m, noaptea, între 22:05 și 02:25.</li>
-          <li><strong>12 nopți în Bangkok</strong>, de luni 15 până sâmbătă 27 februarie.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>De verificat</h3>
-        <ul class="chk">
-          <li><strong>Viza de tranzit pentru China</strong> la escala din Beijing — ce reguli se aplică pentru pașaport românesc</li>
-          <li><strong>Prețurile sunt căutate pentru un singur pasager</strong> — de refăcut căutarea pentru 4, la Ryanair tariful urcă</li>
-          <li>Cum ajungem de la Bruxelles-Zaventem la Charleroi, cât ia și cât costă pentru 4</li>
-          <li>Ce companie operează cursa Charleroi → București de la 14:50</li>
-          <li>Hotel în Viena pentru noaptea de 13 &rarr; 14 februarie</li>
-          <li>Cost bagaj de cală la Scoot și Hainan, dus și întors</li>
-        </ul>
-      </div>
-    </div>
 
   </div>
 </details>
@@ -1520,6 +1656,277 @@
   </div>
 </details>
 
+<details class="dest">
+  <summary>
+    <div class="dname"><span class="num">06</span>Da Nang, Vietnam</div>
+    <div class="dmeta">14 – 28 februarie · Singapore Airlines, cu bagaj de cală inclus</div>
+    <div class="dprice">€630 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
+    <div class="dsub">€2.524 total · doar zboruri</div>
+  </summary>
+
+  <div class="body">
+
+    <p class="intro">Singura variantă cu bagaj de cală inclus în tarif. Zburăm cu Wizz la Dubai duminică, apoi Singapore Airlines până la Da Nang, cu o bucată operată de Scoot. Costul ascuns e la întors: 17 ore de escală în Singapore și un transfer strâns prin Golf.</p>
+
+    <div class="split">
+      <div class="globe" data-route="dad">
+        <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Dubai – Singapore – Da Nang, întors prin Abu Dhabi și Larnaca. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+        <div class="gctl">
+          <button type="button" data-act="in" aria-label="Apropie">+</button>
+          <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+          <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+          <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+        </div>
+      </div>
+      <div class="route">
+        <h3>Dus</h3>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">OTP <em>&rarr;</em> DXB</div>
+            <div class="det">duminică 14 feb · Wizz Air · <span>orele și prețul sunt cele găsite pentru 13 februarie — de recăutat pentru 14</span></div>
+          </div>
+        </div>
+        <div class="stay">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt"><strong>Noapte în Dubai</strong><span>14 &rarr; 15 feb · Singapore Airlines pleacă luni la 19:50, deci stăm o noapte pe drum</span></div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">DXB 19:50 <em>&rarr;</em> SIN 07:15<sup>+1</sup></div>
+            <div class="det">luni 15 feb · SQ 495 · <span>7h 25m · plecare Terminal 1</span></div>
+          </div>
+        </div>
+        <div class="gap">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt">7h 45m escală în Singapore, dimineața</div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i></div>
+          <div>
+            <div class="t">SIN 15:00 <em>&rarr;</em> DAD 16:35</div>
+            <div class="det">marți 16 feb · SQ 8392, operat de Scoot · <span>2h 35m · 17h 45m de la Dubai</span></div>
+          </div>
+        </div>
+
+        <h3>Întors</h3>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">DAD 17:35 <em>&rarr;</em> SIN 21:30</div>
+            <div class="det">vineri 26 feb · SQ 8393, operat de Scoot · <span>2h 55m</span></div>
+          </div>
+        </div>
+        <div class="stay">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt"><strong>17h în Singapore, peste noapte</strong><span>26 &rarr; 27 feb · de la 21:30 până la 14:30 · de decis dacă luăm hotel sau rămânem în aeroport</span></div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">SIN 14:30 <em>&rarr;</em> DXB 18:00</div>
+            <div class="det">sâmbătă 27 feb · SQ 494 · <span>7h 30m · 27h 25m de la Da Nang · sosire Terminal 1</span></div>
+          </div>
+        </div>
+        <div class="gap ground risk">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt risk"><strong>3h pentru 130 km, Dubai &rarr; Abu Dhabi</strong><span>Aterizăm la 18:00, Wizz pleacă la 21:00 din alt oraș, iar check-in-ul se închide cu o oră înainte</span></div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">AUH 21:00 <em>&rarr;</em> LCA 23:55</div>
+            <div class="det">sâmbătă 27 feb · Wizz Air W6 4618 · <span>4h 55m</span></div>
+          </div>
+        </div>
+        <div class="stay">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt"><strong>Noapte în Larnaca</strong><span>27 &rarr; 28 feb · aterizăm la 23:55 și plecăm la 10:10</span></div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i></div>
+          <div>
+            <div class="t">LCA 10:10 <em>&rarr;</em> OTP 12:40</div>
+            <div class="det">duminică 28 feb · Wizz Air W4 3026 · <span>2h 30m · acasă duminică la prânz</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h3>Cost zboruri</h3>
+        <table class="cost">
+          <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+          <tr><td>OTP &rarr; DXB · Wizz</td><td>RON</td><td>292</td><td>73</td></tr>
+          <tr><td>DXB &harr; DAD · Singapore Airlines</td><td>AED</td><td>1.822</td><td>455</td></tr>
+          <tr><td>AUH &rarr; LCA · Wizz</td><td>AED</td><td>210</td><td>52</td></tr>
+          <tr><td>LCA &rarr; OTP · Wizz</td><td>EUR</td><td>200</td><td>50</td></tr>
+        </table>
+        <div class="totals">
+          <div class="tot"><div class="n">€2.524</div><div class="l">total, 4 persoane</div></div>
+          <div class="tot"><div class="n">€630</div><div class="l">de persoană</div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Ce câștigăm</h3>
+        <div class="save">
+          <b>Bagaj de 25 kg inclus în tarif</b>
+          Scrie negru pe alb în condițiile de tarif. La toate celelalte variante cu Wizz sau low-cost, bagajul de cală se plătește separat și nu e în prețurile din document.
+        </div>
+        <div class="save">
+          <b>Cel mai mic tarif Singapore Airlines de până acum</b>
+          AED 7.760 față de AED 7.960 la Ho Chi Minh, <span class="amt">−€47 în total</span>, deși drumul e mai lung: 17h 45m față de 16h 15m.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h3>De știut</h3>
+        <ul>
+          <li><strong>Zborul lung pleacă luni 15 la 19:50</strong>, deci venim cu Wizz duminică 14 și dormim o noapte în Dubai. Dacă am veni sâmbătă, ar fi două nopți.</li>
+          <li><strong>17 ore în Singapore la întors</strong>, între vineri 21:30 și sâmbătă 14:30. E o noapte întreagă, în aeroport sau la hotel.</li>
+          <li><strong>Bucata Singapore &harr; Da Nang e operată de Scoot</strong>, compania low-cost a Singapore Airlines. Condițiile de tarif rămân aceleași, inclusiv bagajul, dar nu există divertisment la bord, iar alegerea locului se plătește.</li>
+          <li><strong>Transferul din Golf e la fel de strâns ca la Ho Chi Minh C:</strong> 3 ore pentru 130 km, Dubai → Abu Dhabi.</li>
+          <li><strong>10 nopți în Da Nang</strong>, de marți 16 până vineri 26 februarie — cel mai scurt sejur dintre toate destinațiile.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>De verificat</h3>
+        <ul class="chk">
+          <li><strong>Orele și prețul zborului Wizz spre Dubai de duminică 14 februarie</strong> — cifrele din tabel sunt cele de pe 13</li>
+          <li>Cazare în Dubai, 14 &rarr; 15 februarie, pentru 4 persoane</li>
+          <li>Dacă luăm hotel în Singapore pentru cele 17 ore de la întors, sau rămânem în aeroport</li>
+          <li>Cost și durată transfer Dubai &rarr; Abu Dhabi, și dacă cele 3 ore ajung realist</li>
+          <li>Cazare în Larnaca, 27 &rarr; 28 februarie</li>
+          <li>Cost bagaj de cală la Wizz, pe cele trei zboruri unde nu e inclus</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="dest">
+  <summary>
+    <div class="dname"><span class="num">07</span>Maldive</div>
+    <div class="dmeta">14 – 25 februarie · zbor direct spre Malé, cu Air Arabia din Sharjah</div>
+    <div class="dprice">€621 <span style="color:var(--ink-faint);font-size:13px">/ pers</span></div>
+    <div class="dsub">€2.487 total · doar zboruri</div>
+  </summary>
+
+  <div class="body">
+
+    <p class="intro">Singura destinație cu date diferite: plecăm duminică 14 și suntem acasă joi 25 februarie. Zburăm cu Wizz la Dubai, ne mutăm la Sharjah și de acolo mergem direct la Malé — cea mai scurtă bucată lungă din tot documentul, 4h 25m.</p>
+
+    <div class="split">
+      <div class="globe" data-route="mle">
+        <canvas tabindex="0" role="img" aria-label="Glob cu traseul București – Dubai – Sharjah – Malé. Trage ca să rotești; zoom din butoane sau cu rotița după un click."></canvas>
+        <div class="gctl">
+          <button type="button" data-act="in" aria-label="Apropie">+</button>
+          <button type="button" data-act="out" aria-label="Depărtează">&minus;</button>
+          <button type="button" data-act="reset" aria-label="Repune globul la loc">&#8635;</button>
+          <span class="ghint">trage ca să rotești &middot; zoom cu + și &minus;</span>
+        </div>
+      </div>
+      <div class="route">
+        <h3>Dus</h3>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">OTP 13:15 <em>&rarr;</em> DXB 20:20</div>
+            <div class="det">duminică 14 feb · Wizz Air W4 3267 · <span>5h 05m · sosire Terminal 2</span></div>
+          </div>
+        </div>
+        <div class="gap ground risk">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt risk"><strong>Aterizăm la Dubai, plecăm din Sharjah, noaptea</strong><span>&asymp;25 km · avem 6h 25m, dar se duc pe transfer și pe așteptarea până la 02:45</span></div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i></div>
+          <div>
+            <div class="t">SHJ 02:45 <em>&rarr;</em> MLE 08:10</div>
+            <div class="det">luni 15 feb · Air Arabia G9093 · <span>4h 25m · direct · ajungem dimineața</span></div>
+          </div>
+        </div>
+
+        <h3>Întors</h3>
+        <div class="leg">
+          <div class="rail"><i></i><b></b></div>
+          <div>
+            <div class="t">MLE 11:15 <em>&rarr;</em> SHJ 14:45</div>
+            <div class="det">miercuri 24 feb · Air Arabia G9094 · <span>4h 30m · direct</span></div>
+          </div>
+        </div>
+        <div class="gap ground">
+          <div class="rail"><i></i><b></b></div>
+          <div class="txt">Transfer Sharjah &rarr; Dubai, &asymp;25 km · avem 6h 20m, ziua, deci fără grabă</div>
+        </div>
+        <div class="leg">
+          <div class="rail"><i></i></div>
+          <div>
+            <div class="t">DXB 21:05 <em>&rarr;</em> OTP 00:40<sup>+1</sup></div>
+            <div class="det">miercuri 24 feb · Wizz Air W4 3268 · <span>5h 35m · acasă joi 25 februarie</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h3>Cost zboruri</h3>
+        <table class="cost">
+          <tr><th>Segment</th><th>Plătim în</th><th>EUR</th><th>/ pers</th></tr>
+          <tr><td>OTP &harr; DXB · Wizz</td><td>RON</td><td>791</td><td>197</td></tr>
+          <tr><td>SHJ &harr; MLE · Air Arabia</td><td>AED</td><td>1.696</td><td>424</td></tr>
+        </table>
+        <div class="totals">
+          <div class="tot"><div class="n">€2.487</div><div class="l">total, 4 persoane</div></div>
+          <div class="tot"><div class="n">€621</div><div class="l">de persoană</div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Ce câștigăm</h3>
+        <div class="save">
+          <b>Cel mai scurt drum din tot documentul</b>
+          4h 25m la dus și 4h 30m la întors, direct, fără escală. La celelalte destinații bucata lungă trece de 12 ore și are cel puțin o escală.
+        </div>
+        <div class="save">
+          <b>Doar două rezervări și nicio noapte de hotel</b>
+          Wizz și Air Arabia, atât. Ambele conexiuni se rezolvă în aceeași zi, deci nu plătim cazare pe drum — dar noaptea de la dus se duce oricum.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <h3>De știut</h3>
+        <ul>
+          <li><strong>Are alte date decât restul.</strong> Plecăm duminică 14 și ajungem acasă joi 25 februarie, nu duminică 28. Ies <strong>9 nopți în Maldive</strong>, cel mai scurt sejur din document.</li>
+          <li><strong>Transferul Dubai → Sharjah e noaptea.</strong> Aterizăm la 20:20 și Air Arabia pleacă la 02:45 — cele 6h 25m se duc pe cei 25 km și pe așteptare, chiar dacă nu plătim hotel.</li>
+          <li><strong>Întorsul e mai scump decât dusul la Air Arabia:</strong> AED 1.021 de persoană față de AED 785.</li>
+          <li>Tarifele Air Arabia și Wizz sunt Basic — bagajul de cală se plătește separat pe toate patru zborurile și nu e în prețurile de mai sus.</li>
+          <li>La întors transferul e ziua, cu 6h 20m la dispoziție, deci partea aia e relaxată.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>De verificat</h3>
+        <ul class="chk">
+          <li><strong>Declarația de călătorie pentru Maldive</strong> — apare pe site-ul Air Arabia ca cerință</li>
+          <li>Cost și durată transfer Dubai &rarr; Sharjah, noaptea, pentru 4 persoane</li>
+          <li>Dacă luăm o cameră în Golf pentru noaptea de 14 &rarr; 15, sau așteptăm în aeroportul din Sharjah</li>
+          <li>Cost bagaj de cală la Air Arabia și la Wizz, pe toate cele patru zboruri</li>
+          <li>Dacă există un zbor Air Arabia mai târziu pe 15 februarie, ca să nu pierdem noaptea</li>
+          <li>Dacă se găsesc date care dau mai mult de 9 nopți în Maldive</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</details>
+
 <div class="empty">Aici intră următoarea destinație — trimite pozele și o adaug ca un card nou.</div>
 
 <footer>
@@ -1527,6 +1934,6 @@
 </footer>
 
 </div>
-<script src="globe.js?v=20260915"></script>
+<script src="globe.js?v=20260918"></script>
 </body>
 </html>
