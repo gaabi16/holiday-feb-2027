@@ -16,6 +16,11 @@
   var BAH = { code: "BAH", lon: 50.634, lat: 26.271 };
   var KUL = { code: "KUL", lon: 101.710, lat: 2.746 };
   var FCO = { code: "FCO", lon: 12.239, lat: 41.800 };
+  var VIE = { code: "VIE", lon: 16.570, lat: 48.110 };
+  var BKK = { code: "BKK", lon: 100.750, lat: 13.690 };
+  var PEK = { code: "PEK", lon: 116.603, lat: 40.080 };
+  var BRU = { code: "BRU", lon: 4.484, lat: 50.901 };
+  var CRL = { code: "CRL", lon: 4.454, lat: 50.459 };
 
   var ROUTES = {
     "mnl-a": {
@@ -46,6 +51,18 @@
       spans: [
         { from: 0, to: 1, text: ["2h 20m"] },
         { from: 1, to: 3, text: ["19h 30m", "escală BAH 5h 30m"] }
+      ]
+    },
+    "bkk": {
+      /* ruta se închide: dus prin Viena și Singapore, întors prin Beijing și
+         Bruxelles, apoi transfer pe uscat până la Charleroi */
+      points: [OTP, VIE, SIN, BKK, PEK, BRU, CRL, OTP],
+      ground: [5],
+      spans: [
+        { from: 0, to: 1, text: ["1h 40m"] },
+        { from: 1, to: 3, text: ["16h 15m", "escală SIN 2h"] },
+        { from: 3, to: 5, text: ["19h 25m", "escală PEK 4h 20m"] },
+        { from: 5, to: 6, text: ["transfer", "de verificat"], ground: true }
       ]
     },
     "kul": {
@@ -255,12 +272,15 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
 
     /* etichetele deja așezate în cadrul curent, ca să nu se calce una pe alta */
     var placed = [];
-    function hits(box) {
-      for (var k = 0; k < placed.length; k++) {
-        var q = placed[k];
-        if (box[0] < q[2] && box[2] > q[0] && box[1] < q[3] && box[3] > q[1]) return true;
+    function overlap(box) {
+      var total = 0, k, q, w, hh;
+      for (k = 0; k < placed.length; k++) {
+        q = placed[k];
+        w = Math.min(box[2], q[2]) - Math.max(box[0], q[0]);
+        hh = Math.min(box[3], q[3]) - Math.max(box[1], q[1]);
+        if (w > 0 && hh > 0) total += w * hh;
       }
-      return false;
+      return total;
     }
 
     function pillBox(lines, x, y) {
@@ -391,25 +411,34 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
       for (i = 0; i < pts.length; i++) {
         if (!wpPos[i]) { codeAt.push(null); continue; }
         var x = wpPos[i][0], y = wpPos[i][1];
+        /* o rută care se închide trece de două ori prin același aeroport — codul
+           se scrie o singură dată */
+        var dup = false;
+        for (var q = 0; q < i; q++) {
+          if (wpPos[q] && pts[q].code === pts[i].code &&
+              Math.abs(wpPos[q][0] - x) < 2 && Math.abs(wpPos[q][1] - y) < 2) { dup = true; break; }
+        }
+        if (dup) { codeAt.push(null); continue; }
         var cw = ctx.measureText(pts[i].code).width;
         var ddx = x - cx, ddy = y - cy, dl = Math.sqrt(ddx * ddx + ddy * ddy) || 1;
         var base = Math.atan2(ddy / dl, ddx / dl);
-        var spot = null, spotBox = null;
+        var spot = null, spotBox = null, spotCost = Infinity;
         for (var a = 0; a < 8; a++) {
           var ang = base + Math.ceil(a / 2) * (a % 2 ? -1 : 1) * (Math.PI / 4);
           var lx = x + Math.cos(ang) * 13, ly = y + Math.sin(ang) * 13;
           var right = Math.cos(ang) >= -0.01;
           var bx0 = right ? lx : lx - cw;
           var box = [bx0 - 2, ly - fs / 2 - 2, bx0 + cw + 2, ly + fs / 2 + 2];
-          if (!spot) { spot = [lx, ly, right]; spotBox = box; }
-          if (!hits(box)) { spot = [lx, ly, right]; spotBox = box; break; }
+          var cost = overlap(box);
+          if (cost < spotCost) { spot = [lx, ly, right]; spotBox = box; spotCost = cost; }
+          if (cost === 0) break;
         }
         placed.push(spotBox);
         codeAt.push(spot);
       }
 
       /* durata pe fiecare bucată de traseu, împinsă până scapă de ce e deja pus */
-      var offs = [26, 42, 58, 74, 90];
+      var offs = [26, 42, 58, 74, 90, 106];
       for (i = 0; i < spans.length; i++) {
         var s = spans[i];
         if (!s.mid) continue;
@@ -420,14 +449,15 @@ var LAND="{$1qAYK)-)-O$Q#!;*!$/(T#!P#4,.,8+/Rr#|JK#?*/,#!/*0,L%8)2)*-9Q9]J@-,/$+
         project(s.next, 0); var bx = vx, by = vy;
         var tx = bx - ax, ty = by - ay, tl = Math.sqrt(tx * tx + ty * ty) || 1;
         var nx = -ty / tl, ny = tx / tl;
-        var pick = null, pickBox = null;
-        for (var oi = 0; oi < offs.length && !pick; oi++) {
+        var pick = null, pickBox = null, pickCost = Infinity;
+        for (var oi = 0; oi < offs.length && pickCost > 0; oi++) {
           for (var sg = 0; sg < 2; sg++) {
             var sx = sg ? -nx : nx, sy = sg ? -ny : ny;
             var px2 = mx + sx * offs[oi], py2 = my + sy * offs[oi];
             var pb = pillBox(s.text, px2, py2);
-            if (!pickBox) { pick = [px2, py2]; pickBox = pb; }
-            if (!hits(pb)) { pick = [px2, py2]; pickBox = pb; break; }
+            var pc = overlap(pb);
+            if (pc < pickCost) { pick = [px2, py2]; pickBox = pb; pickCost = pc; }
+            if (pc === 0) break;
           }
         }
         placed.push(pickBox);
