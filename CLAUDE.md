@@ -41,7 +41,7 @@ Nu adăuga framework-uri și nu adăuga build. Cele trei fișiere se leagă înt
 relative, așa că documentul merge deschis direct de pe disc, cu dublu-click.
 
 **Când modifici `style.css` sau `globe.js`, bump-ează `?v=` din `index.html`** (e pe
-ambele linkuri, formatul e data: `?v=20260914`). Fără asta, browserul servește versiunea
+ambele linkuri, formatul e data: `?v=20260915`). Fără asta, browserul servește versiunea
 veche din cache și pagina apare stricată — s-a întâmplat deja: tab-ul C nu afișa nimic,
 fiindcă CSS-ul din cache nu avea regula lui.
 
@@ -175,17 +175,29 @@ toate prețurile sunt căutate pentru **un singur pasager**, deci trebuie refăc
 pentru 4. Rămâne de lămurit și viza de tranzit pentru China, la escala de 4h 20m din
 Beijing.
 
-**Ho Chi Minh, 13 – 28 feb 2027.** A doua rută închisă: dus prin Viena și Singapore cu
-Scoot, întors prin Așgabat și Londra cu Turkmenistan Airlines. Trei rezervări — Ryanair
-OTP→VIE sâmbătă 13 feb (€37 / pers), Kiwi.com pentru VIE→SGN→LGW (€556 / pers, Basic;
-Guarantee €622), plus Wizz LTN→OTP (€54 / pers). Total €2.588 pentru 4, €647 de persoană.
-Noapte de cazare în Viena, 13 → 14 feb, neinclusă.
+**Ho Chi Minh, 13 – 28 feb 2027.** Trei variante, pe tab-uri ca la Manila:
 
-Aceeași capcană ca la Bangkok, în altă parte: aterizăm la **Gatwick** și plecăm de la
-**Luton**, vreo 90 km prin Londra, cu 5h 15m la dispoziție — de aceea cursa Wizz de la
-09:30 e imposibilă și am folosit-o pe cea de la 18:55, la același preț. Escala din Așgabat
-e de doar 1h 20m, dar e în aceeași rezervare Kiwi. De verificat viza de tranzit pentru
-Turkmenistan și prețurile pentru 4 pasageri, nu 1.
+- **A — via Viena**, €2.588 pentru 4 (€647 / pers). Rută închisă: dus prin Viena și
+  Singapore cu Scoot, întors prin Așgabat și Londra cu Turkmenistan Airlines. Trei
+  rezervări — Ryanair OTP→VIE (€37 / pers), Kiwi VIE→SGN→LGW (€556 / pers, Basic;
+  Guarantee €622), Wizz LTN→OTP (€54 / pers). Capcana: aterizăm la **Gatwick** și plecăm
+  de la **Luton**, ~90 km prin Londra — de aceea cursa Wizz de la 09:30 e imposibilă și am
+  folosit-o pe cea de la 18:55. Escala din Așgabat e de doar 1h 20m, dar e în aceeași
+  rezervare. De verificat viza de tranzit pentru Turkmenistan.
+- **B — Singapore Airlines**, €2.789 pentru 4 (€697 / pers), cea mai scumpă. Wizz OTP→DXB
+  (lei 1.536), SQ 495 + SQ 184 la dus și SQ 185 + SQ 494 la întors (AED 7.960 pentru 4),
+  apoi Wizz DXB→OTP (lei 824 / pers, preț Discount Club; regular lei 879). **Câștigă o zi
+  întreagă** — plecăm din Ho Chi Minh la 19:55, nu la 04:10 ca la A. Riscul e cel de la
+  Manila: 3h 05m și T1→T2 la Dubai. Escala de la întors e de 15h 35m în Singapore.
+- **C — Singapore Airlines + Larnaca**, €2.571 pentru 4 (€642 / pers), **cea mai ieftină**.
+  Același dus ca B, dar întors cu SQ 187 + SQ 494 (același tarif ca la B) și acasă prin Abu
+  Dhabi și Larnaca cu Wizz. Punctul slab e cel mai strâns transfer din document: **3 ore
+  pentru 130 km**, Dubai → Abu Dhabi, cu check-in-ul Wizz închizându-se cu o oră înainte.
+  Cere două nopți de cazare, Dubai și Larnaca.
+
+A doua destinație cu tab-uri, deci al doilea set de id-uri în CSS: `sa` / `sb` / `sc`,
+lângă `va`…`ve` de la Manila. Fiecare destinație cu tab-uri are nevoie de setul ei, fiindcă
+selectorii `#id:checked~.pane-x` merg doar între frați.
 
 **Phuket, 13 – 28 feb 2027.** Cea mai încâlcită la sol: **două transferuri între
 aeroporturi, amândouă în Golf**. La dus Wizz aterizează la Dubai (lei 1.536 pentru 4), dar
