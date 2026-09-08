@@ -1,22 +1,23 @@
-// Generează datele de coastă folosite de globurile interactive din globe.js.
+// Generates the coastline data used by the interactive globes.
 //
 //   npm install world-atlas topojson-client
 //   node make-globe.mjs
 //
-// Scriptul rescrie blocul dintre marcajele LAND-DATA din globe.js. Nu trebuie
-// rulat ca să adaugi o destinație nouă — rutele sunt definite tot în globe.js,
-// în obiectul ROUTES. Rulează-l doar dacă vrei altă rezoluție a coastelor.
+// The script rewrites the block between the LAND-DATA markers in
+// globe/land-data.js. You do not need to run it to add a destination — routes
+// live in globe/routes.js. Run it only if you want a different coastline
+// resolution.
 
 import { feature } from "topojson-client";
 import { readFileSync, writeFileSync } from "fs";
 
-// Alfabet de 86 de caractere sigure într-un literal JS cu ghilimele duble.
+// An 86-character alphabet, all safe inside a double-quoted JS literal.
 const AB =
   "!#$%()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_abcdefghijklmnopqrstuvwxyz{|}";
-const HALF = 43; // cifră 0..42 = ultimul caracter, 43+d = continuă
+const HALF = 43; // digit 0..42 = last character, 43+d = keep going
 
 if (AB.length !== 2 * HALF) {
-  throw new Error(`alfabet de ${AB.length} caractere, aștept ${2 * HALF}`);
+  throw new Error(`alphabet has ${AB.length} characters, expected ${2 * HALF}`);
 }
 
 function pushVarint(out, value) {
@@ -42,7 +43,7 @@ for (const geom of geometries) {
   for (const poly of polys) for (const ring of poly) rings.push(ring);
 }
 
-// 0,1° ≈ 11 km: sub un pixel la zoom 1, abia vizibil la zoom maxim.
+// 0.1 degrees is about 11 km: under a pixel at zoom 1, barely visible at full zoom.
 const Q = 10;
 const out = [];
 pushVarint(out, rings.length);
@@ -55,7 +56,7 @@ for (const ring of rings) {
   for (const [lon, lat] of ring) {
     const qLon = Math.round(lon * Q);
     const qLat = Math.round(lat * Q);
-    if (qLon === prevLon && qLat === prevLat) continue; // puncte duplicate după cuantizare
+    if (qLon === prevLon && qLat === prevLat) continue; // duplicate points after quantisation
     quantized.push([qLon, qLat]);
     prevLon = qLon;
     prevLat = qLat;
@@ -76,16 +77,17 @@ const blob = out.join("");
 const START = "/*LAND-DATA-START*/";
 const END = "/*LAND-DATA-END*/";
 
-const js = readFileSync("./globe.js", "utf8");
+const target = "./globe/land-data.js";
+const js = readFileSync(target, "utf8");
 const from = js.indexOf(START);
 const to = js.indexOf(END);
 if (from === -1 || to === -1) {
-  throw new Error("nu găsesc marcajele LAND-DATA în globe.js");
+  throw new Error(`cannot find the LAND-DATA markers in ${target}`);
 }
 
 const replacement = `${START}\nvar LAND_AB="${AB}";\nvar LAND="${blob}";\n${END}`;
-writeFileSync("./globe.js", js.slice(0, from) + replacement + js.slice(to + END.length));
+writeFileSync(target, js.slice(0, from) + replacement + js.slice(to + END.length));
 
 console.log(
-  `${rings.length} contururi, ${points} puncte, ${(blob.length / 1024).toFixed(1)} KB scrise în globe.js`
+  `${rings.length} rings, ${points} points, ${(blob.length / 1024).toFixed(1)} KB written to ${target}`
 );
