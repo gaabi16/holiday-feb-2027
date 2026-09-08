@@ -58,7 +58,7 @@ h3{font-size:12.5px; font-weight:600; color:var(--ink-faint); margin:0 0 12px; l
   border-color:var(--amber); background:var(--amber-soft); color:var(--ink)}
 #va:focus-visible~.tabbar label[for=va],#vb:focus-visible~.tabbar label[for=vb],#vc:focus-visible~.tabbar label[for=vc],#vd:focus-visible~.tabbar label[for=vd],#ve:focus-visible~.tabbar label[for=ve]{outline:2px solid var(--amber); outline-offset:2px}
 #va:checked~.pane-a,#vb:checked~.pane-b,#vc:checked~.pane-c,#vd:checked~.pane-d,#ve:checked~.pane-e{display:block}
-/* fiecare destinație cu tab-uri are nevoie de propriul set de id-uri */
+/* every destination with tabs needs its own set of ids */
 #sa:checked~.tabbar label[for=sa],#sb:checked~.tabbar label[for=sb],#sc:checked~.tabbar label[for=sc]{
   border-color:var(--amber); background:var(--amber-soft); color:var(--ink)}
 #sa:focus-visible~.tabbar label[for=sa],#sb:focus-visible~.tabbar label[for=sb],#sc:focus-visible~.tabbar label[for=sc]{outline:2px solid var(--amber); outline-offset:2px}
