@@ -1,0 +1,50 @@
+# Refreshes the exchange rates and rebuilds the page with them.
+#
+# The ECB publishes its daily reference rates around 16:00 CET on TARGET
+# business days, so this runs at 16:30 UTC — comfortably after publication in
+# both winter and summer — Monday to Friday. There is no weekend fixing to
+# fetch, so there is no weekend run.
+#
+# If the rates have not moved, nothing is committed and the run is a no-op.
+
+name: Update exchange rates
+
+on:
+  schedule:
+    - cron: "30 16 * * 1-5"
+  workflow_dispatch: # so it can be run by hand from the Actions tab
+
+concurrency:
+  group: rates
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch today's rates
+        run: node fetch-rates.mjs
+
+      - name: Rebuild index.html
+        run: node build.mjs
+
+      - name: Commit if anything moved
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Rates unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rates.json index.html
+          git commit -m "Update exchange rates ($(node -p "require('./rates.json').date"))"
+          git push
