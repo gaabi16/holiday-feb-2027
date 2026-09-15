@@ -136,7 +136,6 @@ li strong{color:var(--ink); font-weight:500}
 .alert p:last-child{margin-bottom:0}
 .alert strong{color:var(--ink); font-weight:600}
 
-.empty{border:1px dashed var(--line); border-radius:12px; padding:22px 20px; color:var(--ink-faint); font-size:14px; text-align:center}
 footer{margin-top:34px; padding-top:18px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:12.5px}
 footer .rate{font-family:'IBM Plex Mono',monospace; color:var(--ink-dim)}
 
