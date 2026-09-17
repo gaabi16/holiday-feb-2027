@@ -40,10 +40,15 @@ node build.mjs
 ```
 
 The build concatenates the partials in filename order (the `dest-NN-` prefix is
-what orders the page) and stamps today's date into the `?v=` cache-busting
-parameter on `style.css` and the three globe scripts. Without that stamp the
-browser serves a stale CSS or JS and the page looks broken — it has happened
-before: tab C showed nothing because the cached CSS had no rule for it.
+what orders the page) and resolves `__HASH:style.css__` into a short digest of
+that file's contents, for the `?v=` cache-busting parameter. Every asset gets
+its own hash, so a URL changes exactly when that file changes.
+
+This used to be the date, which was not enough: two edits in one afternoon
+produced the same `?v=`, the browser served the first one out of cache, and the
+page ran a mix of old and new files. That cost an hour of chasing an animation
+bug that had already been fixed. Before that it was nothing at all, and tab C
+showed nothing because the cached CSS had no rule for it. Keep the hashes.
 
 The output is a single self-contained `index.html`, so the document still opens
 straight off the disk with a double-click. No framework, no bundler, no
@@ -118,7 +123,11 @@ Plex Mono for times, airport codes and prices.
 ## Animation
 
 Cards animate open and shut from `ui.js`, using the Web Animations API on the
-height of `.body`. The pure-CSS route (`interpolate-size: allow-keywords` with
+height of `.body` — **height only**. Animating opacity as well made the browser
+composite the whole open card (2,900px and 800-odd nodes for Manila, with a
+canvas in it) into a layer every frame, and it stuttered on real hardware. The
+card adds `.is-animating` for the duration, which applies `contain:layout paint`
+so the repeated layout stays inside it. The pure-CSS route (`interpolate-size: allow-keywords` with
 `::details-content`) is still Chromium-only in 2026 and the family reads this
 on iPhones, so it is done in script instead.
 
