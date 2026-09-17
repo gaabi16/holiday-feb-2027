@@ -10,13 +10,21 @@
    is animated here with the Web Animations API instead — that works
    everywhere and needs no library.
 
+   Only the height is animated, deliberately. Animating opacity as well meant
+   the browser had to composite the whole open card — 2,900px and 800-odd nodes
+   for Manila, with a canvas inside — into a layer on every frame, which
+   stuttered on real hardware. Height alone still reads as an unfold.
+
+   .is-animating adds CSS containment for the duration, so the repeated layout
+   stays inside the card instead of propagating through the document.
+
    Anyone who has asked their system for less motion gets the plain, instant
    toggle: the listener bails out and the browser's own behaviour takes over. */
 (function () {
   "use strict";
 
-  var DURATION = 260;
-  var EASE = "cubic-bezier(.4, 0, .2, 1)";
+  var DURATION = 200;
+  var EASE = "cubic-bezier(.22, .61, .36, 1)"; // leaves quickly, settles gently
 
   var quiet = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (quiet || !document.body.animate) return;
@@ -67,19 +75,20 @@
     }
 
     function run(from, to) {
+      card.classList.add("is-animating");
       body.style.overflow = "hidden";
+      body.style.willChange = "height";
 
       running = body.animate(
-        [
-          { height: from + "px", opacity: from ? 1 : 0 },
-          { height: to + "px", opacity: to ? 1 : 0 }
-        ],
+        [{ height: from + "px" }, { height: to + "px" }],
         { duration: DURATION, easing: EASE }
       );
 
       return new Promise(function (resolve) {
         running.onfinish = function () {
+          card.classList.remove("is-animating");
           body.style.overflow = "";
+          body.style.willChange = "";
           running = null;
           resolve(true);
         };
