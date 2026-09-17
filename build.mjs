@@ -5,8 +5,11 @@
 
    The output is a single self-contained index.html, so the document still
    opens straight off the disk with a double-click and works on GitHub Pages.
-   The ?v= cache-busting stamp on style.css and the scripts is filled in here
-   from today's date, so the browser never serves a stale CSS or JS.
+
+   Write __HASH:style.css__ in a partial and the build substitutes a short
+   digest of that file's contents. So the ?v= on every asset changes exactly
+   when the asset changes — not once a day, which used to mean two edits in one
+   afternoon shared a URL and the browser quietly served the first one.
 
    MONEY
    -----
@@ -29,6 +32,7 @@
    Rebuild after a refresh or the page keeps the old numbers. */
 
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -75,7 +79,15 @@ if (destinations.length === 0) {
   process.exit(1);
 }
 
-const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+/* __HASH:path__ -> the first 10 hex characters of the file's SHA-1 */
+const hashes = new Map();
+function assetHash(relPath) {
+  if (!hashes.has(relPath)) {
+    const bytes = readFileSync(join(root, relPath));
+    hashes.set(relPath, createHash("sha1").update(bytes).digest("hex").slice(0, 10));
+  }
+  return hashes.get(relPath);
+}
 
 const parts = ["head.html", "header.html", ...destinations, "footer.html"];
 
@@ -83,7 +95,7 @@ const page =
   parts
     .map((name) => money(read(name), name))
     .join("\n\n")
-    .replaceAll("__V__", stamp)
+    .replace(/__HASH:([\w./-]+)__/g, (_, f) => assetHash(f))
     .replaceAll("__RATE_RON__", rates.eur.RON.toFixed(2))
     .replaceAll("__RATE_AED__", rates.eur.AED.toFixed(2))
     .replaceAll("__RATE_DATE__", formatDate(rates.date)) + "\n";
@@ -97,8 +109,9 @@ writeFileSync(join(root, "index.html"), page);
 
 console.log(
   `build: index.html <- ${destinations.length} destinations, ${converted} figures ` +
-    `at ${rates.eur.RON} RON / ${rates.eur.AED} AED (${rates.date}), v=${stamp}`
+    `at ${rates.eur.RON} RON / ${rates.eur.AED} AED (${rates.date})`
 );
+for (const [file, h] of hashes) console.log(`  ${file}?v=${h}`);
 
 function formatDate(iso) {
   const [y, m, d] = iso.split("-").map(Number);
