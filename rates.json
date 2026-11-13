@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-12",
-  "fetched": "2026-11-12T22:22:35.791Z",
+  "date": "2026-11-13",
+  "fetched": "2026-11-13T22:04:14.758Z",
   "source": "European Central Bank daily reference rates",
   "note": "AED derived from EUR/USD via the dirham's 3.6725 peg to the dollar; the ECB does not publish AED.",
   "eur": {
-    "RON": 5.3473,
-    "AED": 4.0695
+    "RON": 5.3494,
+    "AED": 4.0588
   }
 }
